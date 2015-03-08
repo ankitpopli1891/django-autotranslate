@@ -18,7 +18,7 @@ setup(
     license='MIT License',
     description='A simple Django app to autotranslate po files using google translate',
     long_description=README,
-    url='http://www.example.com/',
+    url='https://github.com/ankitpopli1891/django-autotranslate/',
     author='Ankit Popli',
     author_email='ankitpopli1891@gmail.com',
     classifiers=[
