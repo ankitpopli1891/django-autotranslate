@@ -10,7 +10,7 @@ def translate_string(text, target_language, source_language='en'):
 
 def translate_strings(strings, target_language, source_language='en', optimized=True):
     """
-    :param strings:         an iterable (list, tuple,etc)
+    :param strings:         an iterable (list, tuple, etc)
     :param target_language: language code of the target language
     :param source_language: language code of the source language
     :param optimized:       accepts boolean
