@@ -41,7 +41,7 @@ class Command(BaseCommand):
                     if not file.endswith('.po'):
                         # process file only
                         # if its a pot file
-                        return
+                        continue
 
                     # get the target language from the parent folder name
                     target_language = os.path.basename(os.path.dirname(root))
