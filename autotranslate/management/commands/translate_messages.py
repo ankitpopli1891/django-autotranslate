@@ -7,6 +7,7 @@ from optparse import make_option
 
 import os
 import codecs
+import polib
 
 class Command(BaseCommand):
     help = ('autotranslate all the message files that have been generated '
@@ -61,21 +62,12 @@ class Command(BaseCommand):
         """
         print('translating ', target_language)
 
+        po = polib.pofile(os.path.join(root, file_name))
         strings = []
         translations = {}
-        with codecs.open(os.path.join(root, file_name),'r','utf-8') as _input_file:
-            original_file = _input_file.readlines()
-            for index, line in enumerate(original_file):
-                if line.startswith('msgid'):
-                    # separate the actual string from the whole line
-                    # for each line in input file
-                    strings.append('"'.join(line.split('"')[1:-1]))
-                if line.startswith('msgstr'):
-                    # map the line number with the raw string
-                    # taken out for translation
-                    translations.update({
-                        index: line
-                    })
+        for index, entry in enumerate(po):
+            strings.append(entry.msgid)
+            translations.update({index: entry.msgstr})
 
         # translate the strings,
         # all the translated strings are returned
@@ -83,24 +75,8 @@ class Command(BaseCommand):
         # viz. [a, b] -> [trans_a, trans_b]
         translated_strings = translate_strings(strings, target_language, 'en', False)
 
-        # sort the numbers to make sure all the translations
-        # are injected at the right position
-        keys = [_ for _ in translations.keys()]
-        keys.sort()
+        for index, entry in enumerate(po):
+            entry.msgstr = translated_strings[index]
 
-        index = 0
-        for key in keys:
-            line = translations.get(key).split('"')
-            line = [line[0], line[-1]]
-            line.insert(1, translated_strings[index])
-            line = '"'.join(line)
-            translations[key] = line
-            index += 1
+        po.save()
 
-        with codecs.open(os.path.join(root, file_name), 'w','utf-8') as output_file:
-            for index, line in enumerate(original_file):
-                if index in translations.keys():
-                    line = translations.get(index)
-                    output_file.write(line)
-                    continue
-                output_file.write(line)
