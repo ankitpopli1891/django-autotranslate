@@ -76,6 +76,10 @@ class Command(BaseCommand):
         translated_strings = translate_strings(strings, target_language, 'en', False)
 
         for index, entry in enumerate(po):
+            if entry.msgid.startswith("\n") and not translated_strings[index].startswith("\n"):
+                translated_strings[index] = u"\n" + translated_strings[index]
+            if entry.msgid.endswith("\n") and not translated_strings[index].endswith("\n"):
+                translated_strings[index] = translated_strings[index] + u"\n"
             entry.msgstr = translated_strings[index]
 
         po.save()
