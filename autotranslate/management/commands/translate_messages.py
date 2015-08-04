@@ -6,7 +6,7 @@ from django.core.management.base import BaseCommand
 from optparse import make_option
 
 import os
-
+import codecs
 
 class Command(BaseCommand):
     help = ('autotranslate all the message files that have been generated '
@@ -29,10 +29,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         locale = options.get('locale')
-
         assert getattr(settings, 'USE_I18N', False), 'i18n framework is disabled'
         assert getattr(settings, 'LOCALE_PATHS', []), 'locale paths is not configured properly'
-
         for directory in settings.LOCALE_PATHS:
             # walk through all the paths
             # and find all the pot files
@@ -47,6 +45,7 @@ class Command(BaseCommand):
                     target_language = os.path.basename(os.path.dirname(root))
 
                     if locale and target_language not in locale:
+                        #print "Skipping language %s" % target_language
                         continue
 
                     self.translate_file(root, file, target_language)
@@ -64,7 +63,7 @@ class Command(BaseCommand):
 
         strings = []
         translations = {}
-        with open(os.path.join(root, file_name)) as _input_file:
+        with codecs.open(os.path.join(root, file_name),'r','utf-8') as _input_file:
             original_file = _input_file.readlines()
             for index, line in enumerate(original_file):
                 if line.startswith('msgid'):
@@ -98,7 +97,7 @@ class Command(BaseCommand):
             translations[key] = line
             index += 1
 
-        with open(os.path.join(root, file_name), 'w') as output_file:
+        with codecs.open(os.path.join(root, file_name), 'w','utf-8') as output_file:
             for index, line in enumerate(original_file):
                 if index in translations.keys():
                     line = translations.get(index)
