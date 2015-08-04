@@ -18,7 +18,9 @@ Quickstart:
     **Assumption:** you already have run `makemessages` command and `.po` files have been generated.
 
 #. Add 'autotranslate' to **INSTALLED_APPS** setting.
-#. run the following command to see the magic happen (fingers crossed):
+#. Add GOOGLE_TRANSLATE_KEY to your settings.py if you want to use the paid API
+#. Otherwise it will use the 'goslate' package to use free web-based Google Translate
+#. Run the following command to see the magic happen (fingers crossed):
 
     $  python manage.py translate_messages
 
