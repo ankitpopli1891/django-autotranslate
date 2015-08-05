@@ -6,7 +6,6 @@ from django.core.management.base import BaseCommand
 from optparse import make_option
 
 import os
-import codecs
 import polib
 import re
 
@@ -78,7 +77,7 @@ class Command(BaseCommand):
 
         for index, entry in enumerate(po):
             # Google Translate removes a lot of formatting, these are the fixes:
-						# - Add newline in the beginning if msgid also has that
+            # - Add newline in the beginning if msgid also has that
             if entry.msgid.startswith("\n") and not translated_strings[index].startswith("\n"):
                 translated_strings[index] = u"\n" + translated_strings[index]
 
