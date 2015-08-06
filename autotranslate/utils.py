@@ -1,11 +1,25 @@
 import collections
-import goslate
+from django.conf import settings
 
-go_slate = goslate.Goslate()
+
+if hasattr(settings, 'GOOGLE_TRANSLATE_KEY'):
+    from apiclient.discovery import build
+    gt_service = build('translate', 'v2', developerKey=settings.GOOGLE_TRANSLATE_KEY)
+else:
+    import goslate
+    go_slate = goslate.Goslate()
 
 
 def translate_string(text, target_language, source_language='en'):
-    return go_slate.translate(text, target_language, source_language)
+    if hasattr(settings, 'GOOGLE_TRANSLATE_KEY'):
+        return_dict = gt_service.translations().list(
+            source=source_language, 
+            target=target_language,
+            q=[text]
+        ).execute()
+        return return_dict['translations'][0]['translatedText'] 
+    else:
+        return go_slate.translate(text, target_language, source_language)
 
 
 def translate_strings(strings, target_language, source_language='en', optimized=True):
@@ -18,5 +32,13 @@ def translate_strings(strings, target_language, source_language='en', optimized=
     """
     if not isinstance(strings, collections.Iterable):
         raise Exception
-    _translations = go_slate.translate(strings, target_language, source_language)
-    return _translations if optimized else [_ for _ in _translations]
+    if hasattr(settings, 'GOOGLE_TRANSLATE_KEY'):
+        return_dict = gt_service.translations().list(
+            source=source_language, 
+            target=target_language,
+            q=strings
+        ).execute()
+        return [t['translatedText'] for t in return_dict['translations']]
+    else:
+        _translations = go_slate.translate(strings, target_language, source_language)
+        return _translations if optimized else [_ for _ in _translations]

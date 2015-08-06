@@ -6,7 +6,8 @@ from django.core.management.base import BaseCommand
 from optparse import make_option
 
 import os
-
+import polib
+import re
 
 class Command(BaseCommand):
     help = ('autotranslate all the message files that have been generated '
@@ -29,10 +30,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         locale = options.get('locale')
-
         assert getattr(settings, 'USE_I18N', False), 'i18n framework is disabled'
         assert getattr(settings, 'LOCALE_PATHS', []), 'locale paths is not configured properly'
-
         for directory in settings.LOCALE_PATHS:
             # walk through all the paths
             # and find all the pot files
@@ -47,6 +46,7 @@ class Command(BaseCommand):
                     target_language = os.path.basename(os.path.dirname(root))
 
                     if locale and target_language not in locale:
+                        #print "Skipping language %s" % target_language
                         continue
 
                     self.translate_file(root, file, target_language)
@@ -62,21 +62,12 @@ class Command(BaseCommand):
         """
         print('translating ', target_language)
 
+        po = polib.pofile(os.path.join(root, file_name))
         strings = []
         translations = {}
-        with open(os.path.join(root, file_name)) as _input_file:
-            original_file = _input_file.readlines()
-            for index, line in enumerate(original_file):
-                if line.startswith('msgid'):
-                    # separate the actual string from the whole line
-                    # for each line in input file
-                    strings.append('"'.join(line.split('"')[1:-1]))
-                if line.startswith('msgstr'):
-                    # map the line number with the raw string
-                    # taken out for translation
-                    translations.update({
-                        index: line
-                    })
+        for index, entry in enumerate(po):
+            strings.append(entry.msgid)
+            translations.update({index: entry.msgstr})
 
         # translate the strings,
         # all the translated strings are returned
@@ -84,24 +75,21 @@ class Command(BaseCommand):
         # viz. [a, b] -> [trans_a, trans_b]
         translated_strings = translate_strings(strings, target_language, 'en', False)
 
-        # sort the numbers to make sure all the translations
-        # are injected at the right position
-        keys = [_ for _ in translations.keys()]
-        keys.sort()
+        for index, entry in enumerate(po):
+            # Google Translate removes a lot of formatting, these are the fixes:
+            # - Add newline in the beginning if msgid also has that
+            if entry.msgid.startswith("\n") and not translated_strings[index].startswith("\n"):
+                translated_strings[index] = u"\n" + translated_strings[index]
 
-        index = 0
-        for key in keys:
-            line = translations.get(key).split('"')
-            line = [line[0], line[-1]]
-            line.insert(1, translated_strings[index])
-            line = '"'.join(line)
-            translations[key] = line
-            index += 1
+            # - Add newline at the end if msgid also has that
+            if entry.msgid.endswith("\n") and not translated_strings[index].endswith("\n"):
+                translated_strings[index] = translated_strings[index] + u"\n"
 
-        with open(os.path.join(root, file_name), 'w') as output_file:
-            for index, line in enumerate(original_file):
-                if index in translations.keys():
-                    line = translations.get(index)
-                    output_file.write(line)
-                    continue
-                output_file.write(line)
+            # Remove spaces that have been placed between %(id) tags
+            translated_strings[index] = re.sub("%\s*\(\s*(\w+)\s*\)\s*s",
+                lambda match: r'%({})s'.format(match.group(1).lower()),translated_strings[index])
+
+            entry.msgstr = translated_strings[index]
+
+        po.save()
+
