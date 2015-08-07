@@ -11,7 +11,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-autotranslate',
-    version='0.3',
+    version='0.4',
     packages=find_packages(),
     install_requires=['goslate','polib','django','google-api-python-client'],
     include_package_data=True,
