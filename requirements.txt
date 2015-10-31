@@ -1,4 +1,3 @@
 django
 goslate
 polib
-google-api-python-client

@@ -1,9 +1,18 @@
 import collections
+
 from django.conf import settings
 
 
+# google-api-python-client is optional
+try:
+    import googleapiclient
+except ImportError:
+    googleapiclient = None
+
+
 if hasattr(settings, 'GOOGLE_TRANSLATE_KEY'):
-    from apiclient.discovery import build
+    assert googleapiclient, '`GOOGLE_TRANSLATE_KEY` is configured, but `google-api-python-client` is not installed'
+    from googleapiclient.discovery import build
     gt_service = build('translate', 'v2', developerKey=settings.GOOGLE_TRANSLATE_KEY)
 else:
     import goslate
@@ -34,7 +43,7 @@ def translate_strings(strings, target_language, source_language='en', optimized=
         raise Exception
     if hasattr(settings, 'GOOGLE_TRANSLATE_KEY'):
         return_dict = gt_service.translations().list(
-            source=source_language, 
+            source=source_language,
             target=target_language,
             q=strings
         ).execute()
