@@ -10,19 +10,51 @@ using google translate.
 Installation:
 -------------
 
-    $  pip install django-autotranslate
+::
+
+    pip install django-autotranslate
+
+Add ``'autotranslate'`` to your ``INSTALLED_APPS`` setting.
+
+::
+
+    INSTALLED_APPS = (
+        ...
+        'autotranslate',
+    )
 
 Quickstart:
 -----------
 
-    **Assumption:** you already have run `makemessages` command and `.po` files have been generated.
+::
 
-#. Add 'autotranslate' to **INSTALLED_APPS** setting.
-#. Add GOOGLE_TRANSLATE_KEY to your settings.py if you want to use the paid API
-#. Otherwise it will use the 'goslate' package to use free web-based Google Translate
-#. Run the following command to see the magic happen (fingers crossed):
+    python manage.py translate_messages
 
-    $  python manage.py translate_messages
+The command finds all the generated pot (``.po``) files under the locale paths (``LOCALE_PATHS``) specified in django project settings, and translates them automatically.
+
+
+Options:
+--------
+
+#. ``-l, --locale 'locale'``: Only translate the specified locales
+
+::
+
+    python manage.py translate_messages -l 'de' -l 'es'
+
+
+Settings:
+---------
+
+#. Use a different Translation Service:
+
+::
+
+    # default: 'autotranslate.services.GoSlateTranslatorService'
+    # pip install google-api-python-client
+    AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleAPITranslatorService'
+    GOOGLE_TRANSLATE_KEY = '<google-api-key>'
+
 
 .. |pypi-version| image:: https://img.shields.io/pypi/v/django-autotranslate.svg
     :target: https://pypi.python.org/pypi/django-autotranslate/
