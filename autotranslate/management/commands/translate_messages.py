@@ -1,3 +1,8 @@
+import logging
+import os
+import polib
+import re
+
 from autotranslate.utils import translate_strings
 
 from django.conf import settings
@@ -5,9 +10,8 @@ from django.core.management.base import BaseCommand
 
 from optparse import make_option
 
-import os
-import polib
-import re
+logger = logging.getLogger(__name__)
+
 
 class Command(BaseCommand):
     help = ('autotranslate all the message files that have been generated '
@@ -46,7 +50,7 @@ class Command(BaseCommand):
                     target_language = os.path.basename(os.path.dirname(root))
 
                     if locale and target_language not in locale:
-                        #print "Skipping language %s" % target_language
+                        logger.info('skipping translation for locale `{}`'.format(target_language))
                         continue
 
                     self.translate_file(root, file, target_language)
@@ -60,7 +64,7 @@ class Command(BaseCommand):
         :param file_name:       name of the file to be translated (it should be a pot file)
         :param target_language: language in which the file needs to be translated
         """
-        print('translating ', target_language)
+        logger.info('filling up translations for locale `{}`'.format(target_language))
 
         po = polib.pofile(os.path.join(root, file_name))
         strings = []
@@ -78,18 +82,18 @@ class Command(BaseCommand):
         for index, entry in enumerate(po):
             # Google Translate removes a lot of formatting, these are the fixes:
             # - Add newline in the beginning if msgid also has that
-            if entry.msgid.startswith("\n") and not translated_strings[index].startswith("\n"):
-                translated_strings[index] = u"\n" + translated_strings[index]
+            if entry.msgid.startswith('\n') and not translated_strings[index].startswith('\n'):
+                translated_strings[index] = u'\n' + translated_strings[index]
 
             # - Add newline at the end if msgid also has that
-            if entry.msgid.endswith("\n") and not translated_strings[index].endswith("\n"):
-                translated_strings[index] = translated_strings[index] + u"\n"
+            if entry.msgid.endswith('\n') and not translated_strings[index].endswith('\n'):
+                translated_strings[index] += u'\n'
 
             # Remove spaces that have been placed between %(id) tags
-            translated_strings[index] = re.sub("%\s*\(\s*(\w+)\s*\)\s*s",
-                lambda match: r'%({})s'.format(match.group(1).lower()),translated_strings[index])
+            translated_strings[index] = re.sub('%\s*\(\s*(\w+)\s*\)\s*s',
+                                               lambda match: r'%({})s'.format(match.group(1).lower()),
+                                               translated_strings[index])
 
             entry.msgstr = translated_strings[index]
 
         po.save()
-
