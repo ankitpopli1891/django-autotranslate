@@ -52,7 +52,7 @@ class GoogleAPITranslatorService(BaseTranslatorService):
     https://github.com/google/google-api-python-client
     """
 
-    def __init__(self):
+    def __init__(self, max_segments=128):
         assert googleapiclient, '`GoogleAPITranslatorService` requires `google-api-python-client` package'
 
         self.developer_key = getattr(settings, 'GOOGLE_TRANSLATE_KEY', None)
@@ -62,6 +62,12 @@ class GoogleAPITranslatorService(BaseTranslatorService):
         from googleapiclient.discovery import build
         self.service = build('translate', 'v2', developerKey=self.developer_key)
 
+        # the google translation API has a limit of max
+        # 128 translations in a single request
+        # and throws `Too many text segments Error`
+        self.max_segments = max_segments
+        self.translated_strings = []
+
     def translate_string(self, text, target_language, source_language='en'):
         assert isinstance(text, six.string_types), '`text` should a string literal'
         response = self.service.translations() \
@@ -69,8 +75,20 @@ class GoogleAPITranslatorService(BaseTranslatorService):
         return response.get('translations').pop(0).get('translatedText')
 
     def translate_strings(self, strings, target_language, source_language='en', optimized=True):
-        assert isinstance(strings, collections.Iterable), '`strings` should a iterable containing string_types'
+        assert isinstance(strings, collections.MutableSequence), \
+            '`strings` should be a sequence containing string_types'
         assert not optimized, 'optimized=True is not supported in `GoogleAPITranslatorService`'
-        response = self.service.translations() \
-            .list(source=source_language, target=target_language, q=strings).execute()
-        return [t.get('translatedText') for t in response.get('translations')]
+        if len(strings) <= self.max_segments:
+            setattr(self, 'translated_strings', getattr(self, 'translated_strings', []))
+            response = self.service.translations() \
+                .list(source=source_language, target=target_language, q=strings).execute()
+            self.translated_strings.extend([t.get('translatedText') for t in response.get('translations')])
+            return self.translated_strings
+        else:
+            self.translate_strings(strings[0:self.max_segments], target_language, source_language, optimized)
+            _translated_strings = self.translate_strings(strings[self.max_segments:],
+                                                         target_language, source_language, optimized)
+
+            # reset the property or it will grow with subsequent calls
+            self.translated_strings = []
+            return _translated_strings
