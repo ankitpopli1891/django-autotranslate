@@ -1,14 +1,13 @@
 import logging
 import os
-import polib
 import re
+from optparse import make_option
 
-from autotranslate.utils import translate_strings
-
+import polib
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from optparse import make_option
+from autotranslate.utils import translate_strings
 
 logger = logging.getLogger(__name__)
 
@@ -68,10 +67,8 @@ class Command(BaseCommand):
 
         po = polib.pofile(os.path.join(root, file_name))
         strings = []
-        translations = {}
         for index, entry in enumerate(po):
-            strings.append(entry.msgid)
-            translations.update({index: entry.msgstr})
+            strings.append(humanize_placeholders(entry.msgid))
 
         # translate the strings,
         # all the translated strings are returned
@@ -90,10 +87,31 @@ class Command(BaseCommand):
                 translated_strings[index] += u'\n'
 
             # Remove spaces that have been placed between %(id) tags
-            translated_strings[index] = re.sub('%\s*\(\s*(\w+)\s*\)\s*s',
-                                               lambda match: r'%({})s'.format(match.group(1).lower()),
-                                               translated_strings[index])
+            translated_strings[index] = restore_placeholders(entry.msgid, translated_strings[index])
 
             entry.msgstr = translated_strings[index]
 
         po.save()
+
+
+def humanize_placeholders(msgid):
+    """Convert placeholders to the (google translate) service friendly form.
+
+    %(name)s -> %(name)
+    %s       -> %(item)
+    %d       -> %(number)
+    """
+    return re.sub(
+            r'%(?:\((\w+)\))?([sd])',
+            lambda match: r'%({0})'.format(
+                    match.group(1).lower() if match.group(1) else 'number' if match.group(2) == 'd' else 'item'),
+            msgid)
+
+
+def restore_placeholders(msgid, translated):
+    """Restore placeholders in the translated message."""
+    placehoders = re.findall(r'(\s*)(%(?:\(\w+\))?[sd])(\s*)', msgid)
+    return re.sub(
+            r'(\s*)(%\s*\([^\)]+\))(\s*)',
+            lambda matches: '{0}{1}{2}'.format(placehoders[0][0], placehoders[0][1], placehoders.pop(0)[2]),
+            translated)

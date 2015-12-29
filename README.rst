@@ -56,6 +56,15 @@ Settings:
     GOOGLE_TRANSLATE_KEY = '<google-api-key>'
 
 
+Tests
+-----
+
+Tests should run with tox \>=1.8. Running `tox` will run all tests for all environments.
+Use tox -e \<env\> to run a certain environment, a list of all environments can be found with tox -l.
+
+Hint: it is possible to run all environments in parallel with `detox`.
+
+
 .. |pypi-version| image:: https://img.shields.io/pypi/v/django-autotranslate.svg
     :target: https://pypi.python.org/pypi/django-autotranslate/
 
