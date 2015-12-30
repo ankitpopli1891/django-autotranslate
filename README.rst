@@ -36,7 +36,9 @@ The command finds all the generated pot (``.po``) files under the locale paths (
 Options:
 --------
 
+#. ``-f, --set-fuzzy``: Set the 'fuzzy' flag on autotranslated entries
 #. ``-l, --locale 'locale'``: Only translate the specified locales
+#. ``-u, --untranslated``: Only translate the untranslated messages
 
 ::
 
