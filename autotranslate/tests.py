@@ -3,17 +3,27 @@ import unittest
 from autotranslate.management.commands.translate_messages import humanize_placeholders, restore_placeholders
 
 
-class TestCase(unittest.TestCase):
-    def test1(self):
-        self.assertEqual(humanize_placeholders('foo %(item)s bar'), 'foo %(item) bar')
-        self.assertEqual(humanize_placeholders('foo %(item_name)s bar'), 'foo %(item_name) bar')
+class HumanizeTestCase(unittest.TestCase):
+    def test_named_placeholders(self):
+        self.assertEqual(humanize_placeholders('foo %(item)s bar'), 'foo __item__ bar')
+        self.assertEqual(humanize_placeholders('foo %(item_name)s bar'), 'foo __item_name__ bar')
 
         self.assertEqual(humanize_placeholders('foo % (item)s bar'), 'foo % (item)s bar')
-        self.assertEqual(humanize_placeholders('foo %s bar'), 'foo %(item) bar')
-        self.assertEqual(humanize_placeholders('foo %d bar'), 'foo %(number) bar')
 
-    def test2(self):
-        self.assertEqual(restore_placeholders('foo %(item)s bar', 'baz% ( over ) zilot'), 'baz %(item)s zilot')
-        self.assertEqual(restore_placeholders('foo %(item_name)s bar', 'baz% ( item_name ) zilot'),
+    def test_positional_placeholders(self):
+        self.assertEqual(humanize_placeholders('foo %s bar'), 'foo __item__ bar')
+        self.assertEqual(humanize_placeholders('foo %d bar'), 'foo __number__ bar')
+        self.assertEqual(humanize_placeholders('foo %s bar %s'), 'foo __item__ bar __item__')
+        self.assertEqual(humanize_placeholders('foo %s%s'), 'foo __item____item__')
+
+
+class RestoreTestCase(unittest.TestCase):
+    def test_restore_placeholders(self):
+        self.assertEqual(restore_placeholders('foo %(item)s bar', 'baz __over__ zilot'),
+                         'baz %(item)s zilot')
+        self.assertEqual(restore_placeholders('foo %(item_name)s bar', 'baz __item_name__ zilot'),
                          'baz %(item_name)s zilot')
-        self.assertEqual(restore_placeholders('foo %s bar', 'baz% ( item ) zilot'), 'baz %s zilot')
+        self.assertEqual(restore_placeholders('foo %s bar', 'baz __item__ zilot'),
+                         'baz %s zilot')
+        self.assertEqual(restore_placeholders('foo %s%s bar', 'baz __item____item__ zilot'),
+                         'baz %s%s zilot')

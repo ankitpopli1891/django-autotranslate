@@ -97,13 +97,13 @@ class Command(BaseCommand):
 def humanize_placeholders(msgid):
     """Convert placeholders to the (google translate) service friendly form.
 
-    %(name)s -> %(name)
-    %s       -> %(item)
-    %d       -> %(number)
+    %(name)s -> __name__
+    %s       -> __item__
+    %d       -> __number__
     """
     return re.sub(
             r'%(?:\((\w+)\))?([sd])',
-            lambda match: r'%({0})'.format(
+            lambda match: r'__{0}__'.format(
                     match.group(1).lower() if match.group(1) else 'number' if match.group(2) == 'd' else 'item'),
             msgid)
 
@@ -112,6 +112,6 @@ def restore_placeholders(msgid, translated):
     """Restore placeholders in the translated message."""
     placehoders = re.findall(r'(\s*)(%(?:\(\w+\))?[sd])(\s*)', msgid)
     return re.sub(
-            r'(\s*)(%\s*\([^\)]+\))(\s*)',
+            r'(\s*)(__[\w]+?__)(\s*)',
             lambda matches: '{0}{1}{2}'.format(placehoders[0][0], placehoders[0][1], placehoders.pop(0)[2]),
             translated)
