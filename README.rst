@@ -36,7 +36,9 @@ The command finds all the generated pot (``.po``) files under the locale paths (
 Options:
 --------
 
+#. ``-f, --set-fuzzy``: Set the 'fuzzy' flag on autotranslated entries
 #. ``-l, --locale 'locale'``: Only translate the specified locales
+#. ``-u, --untranslated``: Only translate the untranslated messages
 
 ::
 
@@ -54,6 +56,15 @@ Settings:
     # pip install google-api-python-client
     AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleAPITranslatorService'
     GOOGLE_TRANSLATE_KEY = '<google-api-key>'
+
+
+Tests
+-----
+
+Tests should run with tox \>=1.8. Running `tox` will run all tests for all environments.
+Use tox -e \<env\> to run a certain environment, a list of all environments can be found with tox -l.
+
+Hint: it is possible to run all environments in parallel with `detox`.
 
 
 .. |pypi-version| image:: https://img.shields.io/pypi/v/django-autotranslate.svg

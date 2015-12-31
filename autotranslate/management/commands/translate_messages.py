@@ -1,14 +1,13 @@
 import logging
 import os
-import polib
 import re
+from optparse import make_option
 
-from autotranslate.utils import translate_strings
-
+import polib
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from optparse import make_option
+from autotranslate.utils import translate_strings
 
 logger = logging.getLogger(__name__)
 
@@ -21,6 +20,10 @@ class Command(BaseCommand):
         make_option('--locale', '-l', default=[], dest='locale', action='append',
                     help='autotranslate the message files for the given locale(s) (e.g. pt_BR). '
                          'can be used multiple times.'),
+        make_option('--untranslated', '-u', default=False, dest='skip_translated', action='store_true',
+                    help='autotranslate the fuzzy and empty messages only.'),
+        make_option('--set-fuzzy', '-f', default=False, dest='set_fuzzy', action='store_true',
+                    help='set the fuzzy flag on autotranslated messages.'),
     )
 
     def add_arguments(self, parser):
@@ -31,9 +34,19 @@ class Command(BaseCommand):
         parser.add_argument('--locale', '-l', default=[], dest='locale', action='append',
                             help='autotranslate the message files for the given locale(s) (e.g. pt_BR). '
                                  'can be used multiple times.')
+        parser.add_argument('--untranslated', '-u', default=False, dest='skip_translated', action='store_true',
+                            help='autotranslate the fuzzy and empty messages only.')
+        parent.add_argument('--set-fuzzy', '-f', default=False, dest='set_fuzzy', action='store_true',
+                            help='set the fuzzy flag on autotranslated messages.')
+
+    def set_options(self, **options):
+        self.locale = options['locale']
+        self.skip_translated = options['skip_translated']
+        self.set_fuzzy = options['set_fuzzy']
 
     def handle(self, *args, **options):
-        locale = options.get('locale')
+        self.set_options(**options)
+
         assert getattr(settings, 'USE_I18N', False), 'i18n framework is disabled'
         assert getattr(settings, 'LOCALE_PATHS', []), 'locale paths is not configured properly'
         for directory in settings.LOCALE_PATHS:
@@ -49,14 +62,13 @@ class Command(BaseCommand):
                     # get the target language from the parent folder name
                     target_language = os.path.basename(os.path.dirname(root))
 
-                    if locale and target_language not in locale:
+                    if self.locale and target_language not in self.locale:
                         logger.info('skipping translation for locale `{}`'.format(target_language))
                         continue
 
                     self.translate_file(root, file, target_language)
 
-    @classmethod
-    def translate_file(cls, root, file_name, target_language):
+    def translate_file(self, root, file_name, target_language):
         """
         convenience method for translating a pot file
 
@@ -68,10 +80,10 @@ class Command(BaseCommand):
 
         po = polib.pofile(os.path.join(root, file_name))
         strings = []
-        translations = {}
         for index, entry in enumerate(po):
-            strings.append(entry.msgid)
-            translations.update({index: entry.msgstr})
+            if not self.need_translate(entry):
+                continue
+            strings.append(humanize_placeholders(entry.msgid))
 
         # translate the strings,
         # all the translated strings are returned
@@ -80,6 +92,8 @@ class Command(BaseCommand):
         translated_strings = translate_strings(strings, target_language, 'en', False)
 
         for index, entry in enumerate(po):
+            if not self.need_translate(entry):
+                continue
             # Google Translate removes a lot of formatting, these are the fixes:
             # - Add newline in the beginning if msgid also has that
             if entry.msgid.startswith('\n') and not translated_strings[index].startswith('\n'):
@@ -90,10 +104,38 @@ class Command(BaseCommand):
                 translated_strings[index] += u'\n'
 
             # Remove spaces that have been placed between %(id) tags
-            translated_strings[index] = re.sub('%\s*\(\s*(\w+)\s*\)\s*s',
-                                               lambda match: r'%({})s'.format(match.group(1).lower()),
-                                               translated_strings[index])
+            translated_strings[index] = restore_placeholders(entry.msgid, translated_strings[index])
 
             entry.msgstr = translated_strings[index]
 
+            # Set the 'fuzzy' flag on translation
+            if self.set_fuzzy and 'fuzzy' not in entry.flags:
+                entry.flags.append('fuzzy')
+
         po.save()
+
+    def need_translate(self, entry):
+        return not self.skip_translated or not entry.translated() or not entry.obsolete
+
+
+def humanize_placeholders(msgid):
+    """Convert placeholders to the (google translate) service friendly form.
+
+    %(name)s -> __name__
+    %s       -> __item__
+    %d       -> __number__
+    """
+    return re.sub(
+            r'%(?:\((\w+)\))?([sd])',
+            lambda match: r'__{0}__'.format(
+                    match.group(1).lower() if match.group(1) else 'number' if match.group(2) == 'd' else 'item'),
+            msgid)
+
+
+def restore_placeholders(msgid, translated):
+    """Restore placeholders in the translated message."""
+    placehoders = re.findall(r'(\s*)(%(?:\(\w+\))?[sd])(\s*)', msgid)
+    return re.sub(
+            r'(\s*)(__[\w]+?__)(\s*)',
+            lambda matches: '{0}{1}{2}'.format(placehoders[0][0], placehoders[0][1], placehoders.pop(0)[2]),
+            translated)
