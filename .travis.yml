@@ -2,24 +2,30 @@
 language:
     python
 python:
-    - 2.6
-    - 2.7
-    - 3.2
-    - 3.3
-    - 3.4
     - 3.5
 env:
-    - DJANGO=1.5.0
-    - DJANGO=1.6.0
-    - DJANGO=1.7.0
-    - DJANGO=1.8.0
-    - DJANGO=1.9.0
+    - TOX_ENV=dj15-py26
+    - TOX_ENV=dj15-py27
+    - TOX_ENV=dj15-py33
+    - TOX_ENV=dj15-py34
+    - TOX_ENV=dj16-py26
+    - TOX_ENV=dj16-py27
+    - TOX_ENV=dj16-py33
+    - TOX_ENV=dj16-py34
+    - TOX_ENV=dj17-py27
+    - TOX_ENV=dj17-py33
+    - TOX_ENV=dj17-py34
+    - TOX_ENV=dj18-py27
+    - TOX_ENV=dj18-py33
+    - TOX_ENV=dj18-py34
+    - TOX_ENV=dj18-py35
+    - TOX_ENV=dj19-py27
+    - TOX_ENV=dj19-py34
+    - TOX_ENV=dj19-py35
 install:
-    - pip install Django==$DJANGO
-    - pip install -r requirements.txt
+    - pip install tox
 script:
-    - cd tests
-    - python manage.py test autotranslate
+    - tox -e $TOX_ENV
 matrix:
     fast_finish: true
 branches:
