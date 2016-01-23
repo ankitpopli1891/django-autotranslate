@@ -13,6 +13,12 @@ try:
     import goslate
 except ImportError:
     goslate = None
+except SyntaxError:
+    import sys
+    import warnings
+    warnings.warn('goslate disabled due lack support of Python-%s' % (
+        sys.version.split()[0][:3]), RuntimeWarning)
+    goslate = None
 
 try:
     import googleapiclient
