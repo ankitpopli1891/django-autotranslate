@@ -10,13 +10,13 @@ using google translate.
 Installation:
 -------------
 
-::
+.. code-block:: bash
 
     pip install django-autotranslate
 
 Add ``'autotranslate'`` to your ``INSTALLED_APPS`` setting.
 
-::
+.. code-block:: python
 
     INSTALLED_APPS = (
         ...
@@ -26,7 +26,7 @@ Add ``'autotranslate'`` to your ``INSTALLED_APPS`` setting.
 Quickstart:
 -----------
 
-::
+.. code-block:: bash
 
     python manage.py translate_messages
 
@@ -40,7 +40,7 @@ Options:
 #. ``-l, --locale 'locale'``: Only translate the specified locales
 #. ``-u, --untranslated``: Only translate the untranslated messages
 
-::
+.. code-block:: bash
 
     python manage.py translate_messages -l 'de' -l 'es'
 
@@ -50,7 +50,7 @@ Settings:
 
 #. Use a different Translation Service:
 
-::
+.. code-block:: bash
 
     # default: 'autotranslate.services.GoSlateTranslatorService'
     # pip install google-api-python-client
@@ -61,7 +61,7 @@ Settings:
 Tests:
 -----
 
-::
+.. code-block:: bash
 
     # run test against all environments
     tox
