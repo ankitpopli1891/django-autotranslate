@@ -11,12 +11,19 @@ from autotranslate.utils import translate_strings
 
 logger = logging.getLogger(__name__)
 
+# not sure whether we actually need this
+# just making this change for backward compatibility
+# it was always empty anyways
+# https://github.com/django/django/blob/1.9/django/core/management/base.py#L210
+default_options = () if not hasattr(BaseCommand, 'option_list') \
+    else BaseCommand.option_list
+
 
 class Command(BaseCommand):
     help = ('autotranslate all the message files that have been generated '
             'using the `makemessages` command.')
 
-    option_list = BaseCommand.option_list + (
+    option_list = default_options + (
         make_option('--locale', '-l', default=[], dest='locale', action='append',
                     help='autotranslate the message files for the given locale(s) (e.g. pt_BR). '
                          'can be used multiple times.'),
@@ -153,19 +160,19 @@ def humanize_placeholders(msgid):
     %d       -> __number__
     """
     return re.sub(
-            r'%(?:\((\w+)\))?([sd])',
-            lambda match: r'__{0}__'.format(
-                    match.group(1).lower() if match.group(1) else 'number' if match.group(2) == 'd' else 'item'),
-            msgid)
+        r'%(?:\((\w+)\))?([sd])',
+        lambda match: r'__{0}__'.format(
+            match.group(1).lower() if match.group(1) else 'number' if match.group(2) == 'd' else 'item'),
+        msgid)
 
 
 def restore_placeholders(msgid, translation):
     """Restore placeholders in the translated message."""
     placehoders = re.findall(r'(\s*)(%(?:\(\w+\))?[sd])(\s*)', msgid)
     return re.sub(
-            r'(\s*)(__[\w]+?__)(\s*)',
-            lambda matches: '{0}{1}{2}'.format(placehoders[0][0], placehoders[0][1], placehoders.pop(0)[2]),
-            translation)
+        r'(\s*)(__[\w]+?__)(\s*)',
+        lambda matches: '{0}{1}{2}'.format(placehoders[0][0], placehoders[0][1], placehoders.pop(0)[2]),
+        translation)
 
 
 def fix_translation(msgid, translation):
