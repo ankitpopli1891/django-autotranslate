@@ -23,7 +23,7 @@ requirements = [str(ir.req) for ir in install_requirements]
 
 setup(
     name='django-autotranslate',
-    version='1.0.0',
+    version='1.0.1',
     packages=find_packages(),
     install_requires=requirements,
     include_package_data=True,
