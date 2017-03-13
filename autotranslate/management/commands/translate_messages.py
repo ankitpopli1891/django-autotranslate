@@ -7,7 +7,7 @@ import polib
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from autotranslate.utils import translate_strings
+from autotranslate.utils import get_translator
 
 logger = logging.getLogger(__name__)
 
@@ -87,16 +87,18 @@ class Command(BaseCommand):
 
         po = polib.pofile(os.path.join(root, file_name))
         strings = self.get_strings_to_translate(po)
+        print "Translating", file_name, "to", target_language, "; Num Strings:", len(strings)
         # translate the strings,
         # all the translated strings are returned
         # in the same order on the same index
         # viz. [a, b] -> [trans_a, trans_b]
-        translated_strings = translate_strings(strings, target_language, 'en', False)
+        tl = get_translator()
+        translated_strings = tl.translate_strings(strings, target_language, 'en', False)
         self.update_translations(po, translated_strings)
         po.save()
 
     def need_translate(self, entry):
-        return not self.skip_translated or not entry.translated() or not entry.obsolete
+        return not entry.obsolete and (not (self.skip_translated and entry.translated()))
 
     def get_strings_to_translate(self, po):
         """Return list of string to translate from po file.
