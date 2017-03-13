@@ -32,10 +32,11 @@ def import_from_string(val, setting_name):
         raise ImportError('Could not import {} for API setting {}. {}: {}.'
                           .format(val, setting_name, e.__class__.__name__, e))
 
-
-TranslatorService = getattr(settings, 'AUTOTRANSLATE_TRANSLATOR_SERVICE',
-                            'autotranslate.services.GoSlateTranslatorService')
-translator = perform_import(TranslatorService, 'AUTOTRANSLATE_TRANSLATOR_SERVICE')()
-
-translate_string = translator.translate_string
-translate_strings = translator.translate_strings
+def get_translator():
+    """
+    Returns the default translator.
+    """
+    TranslatorService = getattr(settings, 'AUTOTRANSLATE_TRANSLATOR_SERVICE',
+                                'autotranslate.services.GoSlateTranslatorService')
+    translator = perform_import(TranslatorService, 'AUTOTRANSLATE_TRANSLATOR_SERVICE')()
+    return translator
