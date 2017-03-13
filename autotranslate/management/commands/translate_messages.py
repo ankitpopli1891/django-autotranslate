@@ -87,7 +87,7 @@ class Command(BaseCommand):
 
         po = polib.pofile(os.path.join(root, file_name))
         strings = self.get_strings_to_translate(po)
-        print "Translating", file_name, "to", target_language, "; Num Strings:", len(strings)
+
         # translate the strings,
         # all the translated strings are returned
         # in the same order on the same index
