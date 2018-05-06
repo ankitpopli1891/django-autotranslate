@@ -58,6 +58,15 @@ Settings:
     GOOGLE_TRANSLATE_KEY = '<google-api-key>'
 
 
+Compatibility Matrix:
+--------------------
+
+| autotranslate | django      |
+| :-----------: | :---------: |
+| v1.0.x        | Django 1.5+ |
+| v1.1.x        | Django 1.8+ |
+
+
 Tests:
 -----
 
