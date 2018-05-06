@@ -4,14 +4,6 @@ language:
 python:
     - 3.5
 env:
-    - TOX_ENV=dj15-py26
-    - TOX_ENV=dj15-py27
-    - TOX_ENV=dj16-py26
-    - TOX_ENV=dj16-py27
-    - TOX_ENV=dj16-py33
-    - TOX_ENV=dj17-py27
-    - TOX_ENV=dj17-py33
-    - TOX_ENV=dj17-py34
     - TOX_ENV=dj18-py27
     - TOX_ENV=dj18-py33
     - TOX_ENV=dj18-py34
@@ -22,6 +14,16 @@ env:
     - TOX_ENV=dj110-py27
     - TOX_ENV=dj110-py34
     - TOX_ENV=dj110-py35
+    - TOX_ENV=dj111-py27
+    - TOX_ENV=dj111-py34
+    - TOX_ENV=dj111-py35
+    - TOX_ENV=dj111-py36
+    - TOX_ENV=dj20-py34
+    - TOX_ENV=dj20-py35
+    - TOX_ENV=dj20-py36
+    - TOX_ENV=dj21-py35
+    - TOX_ENV=dj21-py36
+    - TOX_ENV=dj21-py37
 install:
     - pip install tox
 script:
