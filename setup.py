@@ -12,7 +12,7 @@ except ImportError: # for pip <= 9.0.3
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'README.rst')) as readme:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'README.md')) as readme:
     README = readme.read()
 
 # allow setup.py to be run from any path
@@ -26,7 +26,7 @@ requirements = [str(ir.req) for ir in install_requirements]
 
 setup(
     name='django-autotranslate',
-    version='1.0.2',
+    version='1.1.0',
     packages=find_packages(),
     install_requires=requirements,
     include_package_data=True,
