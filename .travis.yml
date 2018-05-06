@@ -21,9 +21,6 @@ env:
     - TOX_ENV=dj20-py34
     - TOX_ENV=dj20-py35
     - TOX_ENV=dj20-py36
-    - TOX_ENV=dj21-py35
-    - TOX_ENV=dj21-py36
-    - TOX_ENV=dj21-py37
 install:
     - pip install tox
 script:
