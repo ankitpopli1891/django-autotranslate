@@ -57,6 +57,8 @@ Settings:
     AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleAPITranslatorService'
     GOOGLE_TRANSLATE_KEY = '<google-api-key>'
 
+    # Use GoogleWebTranslatorService
+    AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleWebTranslatorService'
 
 Tests:
 -----
