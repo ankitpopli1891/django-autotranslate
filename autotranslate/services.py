@@ -94,3 +94,51 @@ class GoogleAPITranslatorService(BaseTranslatorService):
             # reset the property or it will grow with subsequent calls
             self.translated_strings = []
             return _translated_strings
+
+class GoogleWebTranslatorService(BaseTranslatorService):
+    """
+    Uses the Google Translation Web Service.
+    'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh&&dt=t&q=%s'
+    """
+
+    def __init__(self, max_segments=256):
+        self.max_segments = max_segments
+
+    def webtranslate(self, strings, target_language, source_language='en'):
+        from urllib.parse import quote
+        import requests, re
+
+        translated_strings = []
+        HEADERS = {'Accept-Language': 'en-US,en;q=0.5',
+                   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0',
+                   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                   'Connection': 'keep-alive',
+                   'Accept-Encoding': 'gzip, deflate, br'}
+        for string in strings:
+            url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl={}&tl={}&&dt=t&q={}'.format(source_language, target_language, quote(string))
+            response = requests.get(url, headers=HEADERS)
+            match = re.compile('\[\[\["(.*?)","').findall(str(response.content, 'utf-8'))
+            if match:
+                translated_strings.append(match[0])
+            else:
+                translated_strings.append(string)
+        return translated_strings
+
+    def translate_string(self, text, target_language, source_language='en'):
+        assert isinstance(text, six.string_types), '`text` should a string literal'
+        response = self.webtranslate(strings=[text], target=target_language, source=source_language)
+        return response
+
+    def translate_strings(self, strings, target_language, source_language='en', optimized=True):
+        assert isinstance(strings, collections.MutableSequence), '`strings` should be a sequence containing string_types'
+
+        if len(strings) == 0:
+            return []
+        elif len(strings) <= self.max_segments:
+            setattr(self, 'translated_strings', getattr(self, 'translated_strings', []))
+            response = self.webtranslate(strings=strings, target_language=target_language, source_language=source_language)
+            return response
+        else:
+            # reset the property or it will grow with subsequent calls
+            self.translated_strings = []
+            return _translated_strings
