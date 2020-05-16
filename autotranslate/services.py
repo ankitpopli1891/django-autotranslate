@@ -1,5 +1,6 @@
-import collections
-import six
+import collections, six, requests, json
+import logging
+logger = logging.getLogger(__name__)
 
 from autotranslate.compat import goslate, googleapiclient
 from django.conf import settings
@@ -101,7 +102,7 @@ class GoogleWebTranslatorService(BaseTranslatorService):
     'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh&&dt=t&q=%s'
     """
 
-    def __init__(self, max_segments=256):
+    def __init__(self):
         self.max_segments = max_segments
 
     def webtranslate(self, strings, target_language, source_language='en'):
@@ -120,9 +121,9 @@ class GoogleWebTranslatorService(BaseTranslatorService):
             match = re.compile('\[\[\["(.*?)","').findall(str(response.content, 'utf-8'))
             if match:
                 translated_strings.append(match[0])
-                print('Translate "{}" to "{}"'.format(string, match[0]))
+                logger.info('Translate "{}" to "{}"'.format(string, match[0]))
             else:
-                print('Translate "{}" denied from google. Please try again later.'.format(string))
+                logger.info('Translate "{}" denied from google. Please try again later.'.format(string))
         return translated_strings
 
     def translate_string(self, text, target_language, source_language='en'):
@@ -130,14 +131,11 @@ class GoogleWebTranslatorService(BaseTranslatorService):
         response = self.webtranslate(strings=[text], target=target_language, source=source_language)
         return response
 
-    def translate_strings(self, strings, target_language, source_language='en', optimized=True):
+    def translate_strings(self, strings, target_language, source_language='en'):
         assert isinstance(strings, collections.MutableSequence), '`strings` should be a sequence containing string_types'
 
         if len(strings) == 0:
-            print('There are no strings request to translate for "{}".'.format(target_language))
-            return []
-        elif len(strings) > self.max_segments:
-            print('Request translate {} of strings, it is over the maximum 256.'.format(len(strings)))
+            logger.info('There are no strings request to translate for "{}".'.format(target_language))
             return []
         elif len(strings) <= self.max_segments:
             setattr(self, 'translated_strings', getattr(self, 'translated_strings', []))
@@ -149,3 +147,63 @@ class GoogleWebTranslatorService(BaseTranslatorService):
         else:
             # reset the property or it will grow with subsequent calls
             return []
+
+
+class AzureAPITranslatorService(BaseTranslatorService):
+    """
+    Use Azure Translator Text
+    https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference
+    """
+
+    def __init__(self):
+        self.azure_translator_secret_key = getattr(settings, 'AZURE_TRANSLATOR_SECRET_KEY', None)
+        assert self.azure_translator_secret_key, ('`AZURE_TRANSLATOR_SECRET_KEY` is not configured, it is required by `Azure Translator`')
+
+        self.max_segments = max_segments
+
+    def azure_translate(self, strings, target_language, source_language='en'):
+        from urllib.parse import quote
+        import requests, re
+
+        translated_strings = []
+        headers = {'Ocp-Apim-Subscription-Key': self.azure_translator_secret_key,
+                   'Content-type': 'application/json'}
+        for string in strings:
+            base_url = 'https://api.cognitive.microsofttranslator.com/'
+            path = 'translate?api-version=3.0&'
+            params = 'from={}&to={}'.format(source_language, target_language)
+            constructed_url = '{}{}{}'.format(base_url, path, params)
+            data = [{'Text': string}]
+            response = requests.post(url, headers=headers, data=data)
+            response = response.json()
+            logger.info(response)
+            if response[0]['translations']:
+                translated_strings.append(response[0]['translations'][0]['text'])
+                logger.info('Translate "{}" to "{}"'.format(string, response[0]['translations'][0]['text']))
+            else:
+                logger.info('Didn\'t get translate for "{}" from Azure.'.format(string))
+        return translated_strings
+
+    def translate_string(self, text, target_language, source_language='en'):
+        assert isinstance(text, six.string_types), '`text` should a string literal'
+        response = self.azure_translate(strings=[text], target=target_language, source=source_language)
+        return response
+
+    def translate_strings(self, strings, target_language, source_language='en', optimized=True):
+        assert isinstance(strings, collections.MutableSequence), '`strings` should be a sequence containing string_types'
+
+        if len(strings) == 0:
+            logger.info('There are no strings request to translate for "{}".'.format(target_language))
+            return []
+        elif len(strings) <= self.max_segments:
+            setattr(self, 'translated_strings', getattr(self, 'translated_strings', []))
+            response = self.azure_translate(strings=strings, target_language=target_language, source_language=source_language)
+            if response:
+                return response
+            else:
+                return []
+        else:
+            # reset the property or it will grow with subsequent calls
+            return []
+
+#curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-cn" -H "Ocp-Apim-Subscription-Key: 3ca92d67da0d484a9be088023e493d59" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]"
