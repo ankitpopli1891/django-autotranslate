@@ -1,4 +1,4 @@
-import collections, six, requests, json
+import collections, six, json, requests
 import logging
 logger = logging.getLogger(__name__)
 
@@ -102,7 +102,7 @@ class GoogleWebTranslatorService(BaseTranslatorService):
     'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh&&dt=t&q=%s'
     """
 
-    def __init__(self):
+    def __init__(self, max_segments=256):
         self.max_segments = max_segments
 
     def webtranslate(self, strings, target_language, source_language='en'):
@@ -131,7 +131,7 @@ class GoogleWebTranslatorService(BaseTranslatorService):
         response = self.webtranslate(strings=[text], target=target_language, source=source_language)
         return response
 
-    def translate_strings(self, strings, target_language, source_language='en'):
+    def translate_strings(self, strings, target_language, source_language='en', optimized=True):
         assert isinstance(strings, collections.MutableSequence), '`strings` should be a sequence containing string_types'
 
         if len(strings) == 0:
@@ -155,7 +155,7 @@ class AzureAPITranslatorService(BaseTranslatorService):
     https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference
     """
 
-    def __init__(self):
+    def __init__(self, max_segments=256):
         self.azure_translator_secret_key = getattr(settings, 'AZURE_TRANSLATOR_SECRET_KEY', None)
         assert self.azure_translator_secret_key, ('`AZURE_TRANSLATOR_SECRET_KEY` is not configured, it is required by `Azure Translator`')
 
@@ -172,11 +172,10 @@ class AzureAPITranslatorService(BaseTranslatorService):
             base_url = 'https://api.cognitive.microsofttranslator.com/'
             path = 'translate?api-version=3.0&'
             params = 'from={}&to={}'.format(source_language, target_language)
-            constructed_url = '{}{}{}'.format(base_url, path, params)
+            url = '{}{}{}'.format(base_url, path, params)
             data = [{'Text': string}]
-            response = requests.post(url, headers=headers, data=data)
+            response = requests.post(url, headers=headers, json=data)
             response = response.json()
-            logger.info(response)
             if response[0]['translations']:
                 translated_strings.append(response[0]['translations'][0]['text'])
                 logger.info('Translate "{}" to "{}"'.format(string, response[0]['translations'][0]['text']))

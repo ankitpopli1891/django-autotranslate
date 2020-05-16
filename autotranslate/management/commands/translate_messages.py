@@ -133,17 +133,20 @@ class Command(BaseCommand):
                 continue
 
             if entry.msgid_plural:
-                # fill the first plural form with the entry.msgid translation
-                translation = next(translations)
-                translation = fix_translation(entry.msgid, translation)
-                entry.msgstr_plural[0] = translation
+                try:
+                    # fill the first plural form with the entry.msgid translation
+                    translation = next(translations)
+                    translation = fix_translation(entry.msgid, translation)
+                    entry.msgstr_plural[0] = translation
 
-                # fill the rest of plural forms with the entry.msgid_plural translation
-                translation = next(translations)
-                translation = fix_translation(entry.msgid_plural, translation)
-                for k, v in entry.msgstr_plural.items():
-                    if k != 0:
-                        entry.msgstr_plural[k] = translation
+                    # fill the rest of plural forms with the entry.msgid_plural translation
+                    translation = next(translations)
+                    translation = fix_translation(entry.msgid_plural, translation)
+                    for k, v in entry.msgstr_plural.items():
+                        if k != 0:
+                            entry.msgstr_plural[k] = translation
+                except StopIteration:
+                    continue
             else:
                 try:
                     translation = next(translations)

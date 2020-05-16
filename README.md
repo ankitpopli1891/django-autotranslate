@@ -64,8 +64,18 @@ Compatibility Matrix:
 | v1.0.x        | Django 1.5+ |
 | v1.1.x        | Django 1.8+ |
 
-    # Use GoogleWebTranslatorService
+    
+- Use Azure Translator Text (Global Region)
+Create Azure Translator Text managed service in Global Region.
+```
     AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleWebTranslatorService'
+    AZURE_TRANSLATOR_SECRET_KEY='<Azure Tranxlator Text Secret Key>'
+```
+
+- Use GoogleWebTranslatorService
+```
+    AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleWebTranslatorService'
+```
 
 Tests:
 -----
