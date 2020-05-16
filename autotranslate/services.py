@@ -205,5 +205,3 @@ class AzureAPITranslatorService(BaseTranslatorService):
         else:
             # reset the property or it will grow with subsequent calls
             return []
-
-#curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-cn" -H "Ocp-Apim-Subscription-Key: 3ca92d67da0d484a9be088023e493d59" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}]"
