@@ -145,9 +145,12 @@ class Command(BaseCommand):
                     if k != 0:
                         entry.msgstr_plural[k] = translation
             else:
-                translation = next(translations)
-                translation = fix_translation(entry.msgid, translation)
-                entry.msgstr = translation
+                try:
+                    translation = next(translations)
+                    translation = fix_translation(entry.msgid, translation)
+                    entry.msgstr = translation
+                except StopIteration:
+                    continue
 
             # Set the 'fuzzy' flag on translation
             if self.set_fuzzy and 'fuzzy' not in entry.flags:

@@ -2,7 +2,6 @@ import collections
 import six
 
 from autotranslate.compat import goslate, googleapiclient
-
 from django.conf import settings
 
 
@@ -95,6 +94,7 @@ class GoogleAPITranslatorService(BaseTranslatorService):
             self.translated_strings = []
             return _translated_strings
 
+
 class GoogleWebTranslatorService(BaseTranslatorService):
     """
     Uses the Google Translation Web Service.
@@ -120,8 +120,9 @@ class GoogleWebTranslatorService(BaseTranslatorService):
             match = re.compile('\[\[\["(.*?)","').findall(str(response.content, 'utf-8'))
             if match:
                 translated_strings.append(match[0])
+                print('Translate "{}" to "{}"'.format(string, match[0]))
             else:
-                translated_strings.append(string)
+                print('Translate "{}" denied from google. Please try again later.'.format(string))
         return translated_strings
 
     def translate_string(self, text, target_language, source_language='en'):
@@ -133,12 +134,18 @@ class GoogleWebTranslatorService(BaseTranslatorService):
         assert isinstance(strings, collections.MutableSequence), '`strings` should be a sequence containing string_types'
 
         if len(strings) == 0:
+            print('There are no strings request to translate for "{}".'.format(target_language))
+            return []
+        elif len(strings) > self.max_segments:
+            print('Request translate {} of strings, it is over the maximum 256.'.format(len(strings)))
             return []
         elif len(strings) <= self.max_segments:
             setattr(self, 'translated_strings', getattr(self, 'translated_strings', []))
             response = self.webtranslate(strings=strings, target_language=target_language, source_language=source_language)
-            return response
+            if response:
+                return response
+            else:
+                return []
         else:
             # reset the property or it will grow with subsequent calls
-            self.translated_strings = []
-            return _translated_strings
+            return []
