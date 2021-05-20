@@ -31,6 +31,8 @@ class Command(BaseCommand):
                     help='autotranslate the fuzzy and empty messages only.'),
         make_option('--set-fuzzy', '-f', default=False, dest='set_fuzzy', action='store_true',
                     help='set the fuzzy flag on autotranslated messages.'),
+        make_option('--source-language', '-s', default='en', dest='source_language', action='store',
+                    help='override the default source language (en) used for translation.'),
     )
 
     def add_arguments(self, parser):
@@ -45,11 +47,14 @@ class Command(BaseCommand):
                             help='autotranslate the fuzzy and empty messages only.')
         parser.add_argument('--set-fuzzy', '-f', default=False, dest='set_fuzzy', action='store_true',
                             help='set the fuzzy flag on autotranslated messages.')
+        parser.add_argument('--source-language', '-s', default='en', dest='source_language', action='store',
+                            help='override the default source language (en) used for translation.')
 
     def set_options(self, **options):
         self.locale = options['locale']
         self.skip_translated = options['skip_translated']
         self.set_fuzzy = options['set_fuzzy']
+        self.source_language = options['source_language']
 
     def handle(self, *args, **options):
         self.set_options(**options)
@@ -93,7 +98,7 @@ class Command(BaseCommand):
         # in the same order on the same index
         # viz. [a, b] -> [trans_a, trans_b]
         tl = get_translator()
-        translated_strings = tl.translate_strings(strings, target_language, 'en', False)
+        translated_strings = tl.translate_strings(strings, target_language, self.source_language, False)
         self.update_translations(po, translated_strings)
         po.save()
 
