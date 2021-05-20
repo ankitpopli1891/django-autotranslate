@@ -39,6 +39,7 @@ Options:
 - ``-f, --set-fuzzy``: Set the 'fuzzy' flag on autotranslated entries
 - ``-l, --locale 'locale'``: Only translate the specified locales
 - ``-u, --untranslated``: Only translate the untranslated messages
+- ``-s, --source-language``: Override the default source language (en) used for translation
 
 ```bash
     python manage.py translate_messages -l 'de' -l 'es'
