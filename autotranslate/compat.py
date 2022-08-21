@@ -10,15 +10,15 @@ except ImportError:
     from django.utils import importlib
 
 try:
-    import goslate
+    import googletrans
 except ImportError:
-    goslate = None
+    googletrans  = None
 except SyntaxError:
     import sys
     import warnings
-    warnings.warn('goslate disabled due lack support of Python-%s' % (
+    warnings.warn('googletrans disabled due lack support of Python-%s' % (
         sys.version.split()[0][:3]), RuntimeWarning)
-    goslate = None
+    googletrans = None
 
 try:
     import googleapiclient

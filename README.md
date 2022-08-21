@@ -51,7 +51,7 @@ Settings:
 - Use a different Translation Service:
 
 ```python
-    # default: 'autotranslate.services.GoSlateTranslatorService'
+    # default: 'autotranslate.services.GoogleTranslatorService'
     # pip install google-api-python-client
     AUTOTRANSLATE_TRANSLATOR_SERVICE = 'autotranslate.services.GoogleAPITranslatorService'
     GOOGLE_TRANSLATE_KEY = '<google-api-key>'

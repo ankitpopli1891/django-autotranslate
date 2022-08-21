@@ -1,4 +1,4 @@
 django
-goslate
+googletrans
 polib
 six

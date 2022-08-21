@@ -1,7 +1,7 @@
 import collections
 import six
 
-from autotranslate.compat import goslate, googleapiclient
+from autotranslate.compat import googletrans, googleapiclient
 
 from django.conf import settings
 
@@ -26,23 +26,23 @@ class BaseTranslatorService:
         raise NotImplementedError('.translate_strings() must be overridden.')
 
 
-class GoSlateTranslatorService(BaseTranslatorService):
+class GoogleTranslatorService(BaseTranslatorService):
     """
     Uses the free web-based API for translating.
-    https://bitbucket.org/zhuoqiang/goslate
+    https://github.com/ssut/py-googletrans
     """
 
     def __init__(self):
-        assert goslate, '`GoSlateTranslatorService` requires `goslate` package'
-        self.service = goslate.Goslate()
+        assert translate, '`TranslateTranslatorService` requires `translate` package'
+        self.service = googletrans.Translator()
 
     def translate_string(self, text, target_language, source_language='en'):
         assert isinstance(text, six.string_types), '`text` should a string literal'
-        return self.service.translate(text, target_language, source_language)
+        return self.service.translate(text,dest=target_language,src=source_language)
 
     def translate_strings(self, strings, target_language, source_language='en', optimized=True):
         assert isinstance(strings, collections.Iterable), '`strings` should a iterable containing string_types'
-        translations = self.service.translate(strings, target_language, source_language)
+        translations =  self.service.translate(list(strings),dest=target_language,src=source_language)
         return translations if optimized else [_ for _ in translations]
 
 
