@@ -33,17 +33,17 @@ class GoogleTranslatorService(BaseTranslatorService):
     """
 
     def __init__(self):
-        assert translate, '`TranslateTranslatorService` requires `translate` package'
+        assert googletrans, '`TranslateTranslatorService` requires `translate` package'
         self.service = googletrans.Translator()
 
     def translate_string(self, text, target_language, source_language='en'):
         assert isinstance(text, six.string_types), '`text` should a string literal'
-        return self.service.translate(text,dest=target_language,src=source_language)
+        return self.service.translate(text,dest=target_language,src=source_language).text
 
     def translate_strings(self, strings, target_language, source_language='en', optimized=True):
-        assert isinstance(strings, collections.Iterable), '`strings` should a iterable containing string_types'
+        assert isinstance(strings, collections.abc.Iterable), '`strings` should a iterable containing string_types'
         translations =  self.service.translate(list(strings),dest=target_language,src=source_language)
-        return translations if optimized else [_ for _ in translations]
+        return [item.text for item in translations]
 
 
 class GoogleAPITranslatorService(BaseTranslatorService):
