@@ -1,4 +1,4 @@
 django
-googletrans
+googletrans==3.1.0a0
 polib
 six
