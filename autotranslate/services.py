@@ -1,7 +1,7 @@
 import collections
 import six
 
-from autotranslate.compat import goslate, googleapiclient
+from autotranslate.compat import goslate, googleapiclient, boto3
 
 from django.conf import settings
 
@@ -97,3 +97,34 @@ class GoogleAPITranslatorService(BaseTranslatorService):
             # reset the property or it will grow with subsequent calls
             self.translated_strings = []
             return _translated_strings
+
+
+class AmazonTranslateTranslatorService(BaseTranslatorService):
+    """
+    Uses the paid Amazon Translate for translating.
+    https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html
+    """
+
+    def __init__(self,):
+        assert boto3, '`AmazonTranslateTranslatorService` requires the `boto3` package'
+
+        self.service = boto3.client('translate')
+
+    def translate_string(self, text, target_language, source_language='en'):
+        assert isinstance(text, six.string_types), '`text` should a string literal'
+        response = self.service.translate_text(
+            Text=text,
+            SourceLanguageCode=source_language,
+            TargetLanguageCode=target_language
+        )
+        return response['TranslatedText']
+
+    def translate_strings(self, strings, target_language, source_language='en', optimized=False):
+        assert isinstance(strings, collections.MutableSequence), \
+            '`strings` should be a sequence containing string_types'
+        translated = []
+        for text in strings:
+            translated.append(
+                self.translate_string(text, target_language, source_language)
+            )
+        return translated
