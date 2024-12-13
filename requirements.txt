@@ -1,5 +1,4 @@
 django
 goslate
-pip
 polib
 six
