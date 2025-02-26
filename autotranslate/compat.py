@@ -24,3 +24,8 @@ try:
     import googleapiclient
 except ImportError:
     googleapiclient = None
+
+try:
+    import boto3
+except ImportError:
+    boto3 = None
