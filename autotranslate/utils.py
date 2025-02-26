@@ -37,6 +37,6 @@ def get_translator():
     Returns the default translator.
     """
     TranslatorService = getattr(settings, 'AUTOTRANSLATE_TRANSLATOR_SERVICE',
-                                'autotranslate.services.GoSlateTranslatorService')
+                                'autotranslate.services.GoogleTranslatorService')
     translator = perform_import(TranslatorService, 'AUTOTRANSLATE_TRANSLATOR_SERVICE')()
     return translator
