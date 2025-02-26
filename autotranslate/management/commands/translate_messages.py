@@ -54,7 +54,7 @@ class Command(BaseCommand):
         self.locale = options['locale']
         self.skip_translated = options['skip_translated']
         self.set_fuzzy = options['set_fuzzy']
-        self.source_language = options['source_language']
+        self.source_language = options.get('source_language', 'en')
 
     def handle(self, *args, **options):
         self.set_options(**options)
