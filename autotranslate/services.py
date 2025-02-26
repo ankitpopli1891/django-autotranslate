@@ -79,8 +79,8 @@ class GoogleAPITranslatorService(BaseTranslatorService):
             assert isinstance(strings, collections.MutableSequence), \
                 '`strings` should be a sequence containing string_types'
         except:
-            assert isinstance(strings, collections.abc.MutableSequence), \
-        assert not optimized, 'optimized=True is not supported in `GoogleAPITranslatorService`'
+            assert isinstance(strings, collections.abc.MutableSequence)
+            assert not optimized, 'optimized=True is not supported in `GoogleAPITranslatorService`'
         if len(strings) == 0:
             return []
         elif len(strings) <= self.max_segments:
