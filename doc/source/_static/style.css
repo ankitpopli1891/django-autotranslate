@@ -1,0 +1,39 @@
+/* Custom styles for django-autotranslate documentation */
+
+.big {
+    font-size: 24px;  /* Or any size you prefer */
+    font-weight: bold; /* If you want it bold */
+}
+
+section#module-autotranslate div.highlight pre {
+    color: #b30000;
+    display: block;           /* ensures it's treated as a block */
+    margin-left: auto;        /* auto margins center block elements */
+    margin-right: auto;
+    width: fit-content;
+}
+body[data-theme="light"] section#module-autotranslate div.highlight,
+body[data-theme="light"] section#module-autotranslate div.highlight pre {
+  background-color: #f8f8f8;
+}
+
+body[data-theme="dark"] section#module-autotranslate div.highlight,
+body[data-theme="dark"] section#module-autotranslate div.highlight pre {
+  background-color: #202020;
+}
+
+/* AUTO → system prefers DARK (acts like dark unless user forced light) */
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) #module-autotranslate .highlight,
+  body:not([data-theme="light"]) #module-autotranslate .highlight pre {
+    background-color: #202020;
+  }
+}
+
+/* AUTO → system prefers LIGHT (acts like light unless user forced dark) */
+@media (prefers-color-scheme: light) {
+  body:not([data-theme="dark"]) #module-autotranslate .highlight,
+  body:not([data-theme="dark"]) #module-autotranslate .highlight pre {
+    background-color: #f8f8f8;
+  }
+}

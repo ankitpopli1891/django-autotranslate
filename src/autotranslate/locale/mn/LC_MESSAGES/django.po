@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} импортын зам эсвэл BACKEND импортын замтай толь бичиг болон нэмэлт"
+" OPTIONS толь бичиг байх ёстой."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "Орчуулгын үйлчилгээг {service} ({source}) импортлох боломжгүй байна."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Орчуулгын үйлчилгээ {service}-г импортлох боломжгүй байна."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr ""
+"Орчуулгын үйлчилгээ {service} ({source}) нь {base}-н дэд ангилал биш юм."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "Орчуулгын үйлчилгээ {service} нь {base}-н дэд ангилал биш юм."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Орчуулгын үйлчилгээний {service} буруу сонголтууд : {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"{makemessages}-ийн үүсгэсэн мессеж (.po) файлуудыг машин орчуулна. Зөвхөн "
+"шинэ болон өөрчлөгдсөн мессежүүдийг орчуулна. {path} болон {app}-тай "
+"өгөгдсөн локал сангуудыг, эсвэл аль нь ч өгөгдөөгүй бол {locale_paths} "
+"доторх сангуудыг орчуулна."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "Орчуулах локал лавлах (нэгээс олон удаа өгч болно)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "Мессежийг нь орчуулах апп (нэгээс олон удаа өгч болно)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Зөвхөн энэ байршлыг орчуулна уу, жишээ нь pt_BR эсвэл pt-br (нэгээс олон "
+"удаа өгч болно). Анхдагчаар олдсон бүх байршлыг орчуулна."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Орчуулсан болон хянаж үзэх гэж буй мессежүүдийг оруулаад бүх мессежийг дахин"
+" орчуулна уу."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy"
+" entries are not compiled by default)."
+msgstr ""
+"Машины орчуулгыг ашиглахаасаа өмнө хянаж болохуйцаар бүдэг бадаг гэж "
+"тэмдэглэнэ үү (бүдэг бадаг оруулгуудыг анхдагчаар эмхэтгэдэггүй)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Зурвасууд ямар хэлээр бичигдсэн."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "{setting}-н оронд ашиглах орчуулгын үйлчилгээ."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Явцын мөрийг харуулах (tqdm багц шаардлагатай). Хэрэв tqdm суулгагдсан "
+"бөгөөд гаралт нь терминал бол анхдагчаар харагдана."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Орчуулга идэвхгүй байна. Тохиргоо дотроос {setting} тохируулна уу."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} нь {package} багцыг шаарддаг."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Орчуулах локал лавлах байхгүй байна. {path} эсвэл {app} ашиглах эсвэл "
+"{setting} гэж тохируулна уу."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Нийт"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "мессежүүд"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "{directory} гэсэн локал лавлах байхгүй байна."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "{locale}-г алгасах: {option}-р сонгоогүй байна."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "{file}-г алгасаж байна: {service} нь {language} дэмждэггүй."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "{file} -г {target_language} руу орчуулж байна"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} буруу тооны орчуулга буцаасан: expected {sent}, received "
+"{received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "{base} -н дэд ангиуд нь {function}()-г хэрэгжүүлэх ёстой."
+
+#: services.py:394
+#, python-brace-format
+msgid ""
+"{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} нь {option} сонголтыг шаарддаг. Үүнийг {setting} доторх OPTIONS "
+"руу нэмнэ үү."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service} нь {package} багцыг шаарддаг. Үүнийг дараах тушаалаар суулгана уу:"
+" {command}"

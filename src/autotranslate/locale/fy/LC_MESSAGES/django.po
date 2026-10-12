@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} moat in ymportpad of in wurdboek wêze mei in BACKEND-ymportpad en "
+"in opsjoneel OPTIONS-wurdboek."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "Koe de oersettsjinst {service} ({source}) net ymportearje."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Koe de oersettsjinst {service} net ymportearje."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "De oersettsjinst {service} ({source}) is gjin subklasse fan {base}."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "De oersettsjinst {service} is gjin subklasse fan {base}."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Unjildige opsjes foar de oersettsjinst {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Masine-oersette de berjochtbestannen (.po) makke troch {makemessages}. "
+"Allinnich nije en feroare berjochten wurde oerset. Oerset de lokale mappen "
+"dy't opjûn binne mei {path} en {app}, of dy yn {locale_paths} as gjin fan "
+"beide opjûn is."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "In lokale map om te oersetten (kin mear as ien kear jûn wurde)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"In app waans berjochten oerset wurde moatte (kinne mear as ien kear jûn "
+"wurde)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Oerset allinich dizze locale, bygelyks pt_BR of pt-br (kin mear as ien kear "
+"opjûn wurde). Standert wurdt elke fûne locale oerset."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Oerset alle berjochten opnij, ynklusyf oersette berjochten en berjochten "
+"dy't wachtsje op beoardieling."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Markearje masine-oersettings as fuzzy, sadat se foar gebrûk beoardiele wurde "
+"kinne (fuzzy yngongen wurde standert net kompilearre)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "De taal wêryn't de berjochten skreaun binne."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "De oersettsjinst dy't brûkt wurde moat ynstee fan {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Lit in foarútgongbalke sjen (fereasket it tqdm-pakket). Standert wurdt it "
+"werjûn as tqdm ynstalleare is en de útfier in terminal is."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Oersetting is útskeakele. Stel {setting} yn yn jo ynstellings."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} fereasket it pakket {package} ."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Gjin lokale mappen om te oersetten. Brûk {path} of {app}, of stel {setting} "
+"yn."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Totaal"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "berjochten"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "De lokale map {directory} bestiet net."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Oerslaan fan {locale}: net selektearre mei {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Oerslaan fan {file}: {service} stipet {language} net."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "Oersetten fan {file} nei {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} joech it ferkearde oantal oersettings werom: ferwachte {sent}, "
+"ûntfongen {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"De oersetting fan {source} is fuortsmiten om't de plakhâlders of opmaak "
+"feroare binne: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Subklassen fan {base} moatte {function}() ymplementearje."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} fereasket de opsje {option} . Foegje it ta oan OPSJES yn {setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service} fereasket it pakket {package} . Ynstallearje it mei: {command}"

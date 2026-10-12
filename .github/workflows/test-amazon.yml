@@ -1,0 +1,48 @@
+name: Test Amazon Translate
+
+# Live (billed) tests of the Amazon Translate service (just test-service amazon).
+#
+# Requires an environment named "amazon-translate" with AWS_ACCESS_KEY_ID and
+# AWS_SECRET_ACCESS_KEY secrets and an AWS_DEFAULT_REGION variable. Add yourself as a
+# required reviewer on the environment to approve each run.
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-amazon-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: amazon-translate
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        id: sp
+        with:
+          python-version: "3.14"
+      - name: Install uv
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          enable-cache: false
+      - name: Setup Just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3
+        with:
+          just-version: "1.58.0"
+      - name: Install gettext
+        run: sudo apt-get install -y gettext
+      - name: Run Amazon Translate tests
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
+          TEST_PYTHON: ${{ steps.sp.outputs.python-path }}
+        run: just test-service amazon -p "$TEST_PYTHON"

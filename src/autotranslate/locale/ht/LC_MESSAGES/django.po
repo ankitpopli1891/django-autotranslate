@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} dwe yon chemen enpòtasyon oubyen yon diksyonè ak yon chemen "
+"enpòtasyon BACKEND epi yon diksyonè OPTIONS opsyonèl."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "Pa t kapab enpòte sèvis tradiksyon {service} la ({source})."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Pa t kapab enpòte sèvis tradiksyon {service} la."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "Sèvis tradiksyon {service} la ({source}) pa yon souklas {base}."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "Sèvis tradiksyon {service} la pa yon souklas {base}."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Opsyon ki pa valab pou sèvis tradiksyon {service} la : {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Machin tradui fichye mesaj (.po) ki kreye pa {makemessages}. Se sèlman mesaj "
+"nouvo ak modifye ki tradui. Li tradui anyè lokal yo bay ak {path} ak {app}, "
+"oubyen sa yo ki nan {locale_paths} si yo pa bay ni youn ni lòt."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "Yon anyè lokal pou tradui (ou ka bay li plis pase yon fwa)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"Yon aplikasyon ki gen mesaj pou tradui (ou ka bay yo plis pase yon fwa)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Se sèlman tradui lokal sa a, pa egzanp pt_BR oubyen pt-br (ou ka bay li plis "
+"pase yon fwa). Pa default, yo tradui tout lokal yo jwenn."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Tradui tout mesaj yo ankò, ki gen ladan mesaj tradui yo ak mesaj k ap tann "
+"revizyon."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Make tradiksyon otomatik yo kòm flou pou yo ka revize anvan yo itilize yo "
+"(antre flou yo pa konpile pa default)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Lang yo ekri mesaj yo ladan l."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "Sèvis tradiksyon pou itilize nan plas {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Montre yon ba pwogrè (li mande pake tqdm nan). Pa default li parèt si tqdm "
+"enstale epi rezilta a se yon tèminal."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Tradiksyon an enfim. Mete {setting} nan paramèt ou yo."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} mande pakè {package} la."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Pa gen anyè lokal pou tradui. Sèvi ak {path} oubyen {app}, oubyen mete "
+"{setting}."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Total"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "mesaj"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "Repètwa lokal {directory} la pa egziste."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Ap sote {locale}: pa chwazi ak {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Ap sote {file}: {service} pa sipòte {language}."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "Ap tradui {file} nan {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} retounen yon move kantite tradiksyon: espere {sent}, resevwa "
+"{received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"Yo te retire tradiksyon {source} la paske espas rezève oswa makè li yo te "
+"chanje: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Souklas {base} yo dwe aplike {function}()."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} bezwen opsyon {option} la. Ajoute li nan OPSYON yo nan {setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr "{service} bezwen pakè {package} la. Enstale li avèk: {command}"

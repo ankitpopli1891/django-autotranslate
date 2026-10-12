@@ -1,0 +1,28 @@
+version: 2
+updates:
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    cooldown:
+      default-days: 14
+    groups:
+      gha-updates:
+        patterns:
+          - "*"
+
+  # Python dependencies managed via uv (pyproject.toml)
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      uv-runtime:
+        dependency-type: "production"
+        patterns:
+          - "*"
+      uv-dev:
+        dependency-type: "development"
+        patterns:
+          - "*"

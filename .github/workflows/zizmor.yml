@@ -1,0 +1,68 @@
+name: Zizmor
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    paths:
+      - ".github/workflows/**/*.yml"
+  schedule:
+    # Run weekly
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zizmor-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  zizmor-analysis:
+    name: Run Zizmor
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write # for post to GH security
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Set up Rust
+        uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+      - name: Install Zizmor
+        run: |
+          cargo install --locked zizmor
+
+      - name: Run Zizmor analysis
+        run: |
+          zizmor --persona auditor --format sarif .github/workflows/ > results.sarif
+
+      - name: Upload analysis results
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: zizmor-results
+          path: results.sarif
+          retention-days: 7
+
+      - name: Upload to code-scanning
+        uses: github/codeql-action/upload-sarif@7188fc363630916deb702c7fdcf4e481b751f97a
+        with:
+          sarif_file: results.sarif
+
+      - name: Fail on Findings
+        run: |
+          count="$(
+            jq '([.runs[]? | (.results // [])[] | select(.level != "note")] | length) // 0' \
+              results.sarif
+          )"
+          echo "Zizmor findings: $count"
+          test "$count" -eq 0

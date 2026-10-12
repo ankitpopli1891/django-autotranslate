@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} ត្រូវតែជាផ្លូវនាំចូល ឬវចនានុក្រមដែលមានផ្លូវនាំចូល BACKEND និងវចនានុក្រម OPTIONS "
+"ជាជម្រើស។"
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "មិនអាចនាំចូលសេវាកម្មបកប្រែ {service} ({source}) បានទេ។"
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "មិនអាចនាំចូលសេវាកម្មបកប្រែ {service} បានទេ។"
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "សេវាបកប្រែ {service} ({source}) មិនមែនជា subclass នៃ {base} ទេ។"
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "សេវាបកប្រែ {service} មិនមែនជា subclass នៃ {base} ទេ។"
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "ជម្រើសមិនត្រឹមត្រូវសម្រាប់សេវាកម្មបកប្រែ {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"បកប្រែឯកសារសារ (.po) ដែលបង្កើតឡើងដោយ {makemessages} ដោយម៉ាស៊ីន។ មានតែសារថ្មី "
+"និងសារដែលបានផ្លាស់ប្តូរប៉ុណ្ណោះដែលត្រូវបានបកប្រែ។ បកប្រែថតឯកសារមូលដ្ឋានដែលបានផ្តល់ឱ្យជាមួយ "
+"{path} និង {app} ឬថតឯកសារនៅក្នុង {locale_paths} ប្រសិនបើទាំងពីរមិនត្រូវបានផ្តល់ឱ្យ។"
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "ថត​មូលដ្ឋាន​ដើម្បី​បកប្រែ (អាច​ផ្ដល់​ឲ្យ​ច្រើន​ជាង​ម្តង)។"
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "កម្មវិធីមួយដែលសាររបស់វាត្រូវបកប្រែ (អាចផ្តល់ឱ្យច្រើនជាងម្តង)។"
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"បកប្រែតែភាសានេះប៉ុណ្ណោះ ឧ. pt_BR ឬ pt-br (អាចផ្តល់បានច្រើនជាងម្តង)។ តាមលំនាំដើម "
+"ភាសានីមួយៗដែលរកឃើញត្រូវបានបកប្រែ។"
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr "បកប្រែសារទាំងអស់ម្តងទៀត រួមទាំងសារដែលបានបកប្រែ និងសារដែលកំពុងរង់ចាំការពិនិត្យ។"
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"សម្គាល់ការបកប្រែដោយម៉ាស៊ីនថាមិនច្បាស់លាស់ ដើម្បីឱ្យពួកវាអាចត្រូវបានពិនិត្យមុនពេលប្រើប្រាស់ "
+"(ធាតុមិនច្បាស់លាស់មិនត្រូវបានចងក្រងតាមលំនាំដើមទេ)។"
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "ភាសាដែលសារត្រូវបានសរសេរជា។"
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "សេវាបកប្រែដែលត្រូវប្រើជំនួសឲ្យ {setting}។"
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"បង្ហាញរបារវឌ្ឍនភាព (តម្រូវឱ្យមានកញ្ចប់ tqdm)។ តាមលំនាំដើម វាត្រូវបានបង្ហាញប្រសិនបើ tqdm "
+"ត្រូវបានដំឡើង ហើយលទ្ធផលគឺជាស្ថានីយ។"
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "ការបកប្រែត្រូវបានបិទ។ កំណត់ {setting} នៅក្នុងការកំណត់របស់អ្នក។"
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} តម្រូវឱ្យមានកញ្ចប់ {package} ។"
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr "គ្មានថតឯកសារមូលដ្ឋានដើម្បីបកប្រែទេ។ ប្រើ {path} ឬ {app} ឬកំណត់ {setting}។"
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "សរុប"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "សារ"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "ថតឯកសារ​មូលដ្ឋាន {directory} មិនមានទេ។"
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "កំពុងរំលង {locale}៖ មិនត្រូវបានជ្រើសរើសជាមួយ {option} ទេ។"
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "កំពុងរំលង {file}៖ {service} មិនស្គាល់ {language} ទេ។"
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "កំពុងបកប្រែ {file} ទៅជាភាសា {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr "{service} បានប្រគល់ចំនួនការបកប្រែខុស៖ រំពឹងទុក {sent}, បានទទួល {received}។"
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"បានលុបចោលការបកប្រែរបស់ {source} ដោយសារតែកន្លែងដាក់ ឬការសម្គាល់របស់វាបានផ្លាស់ប្តូរ៖ "
+"{translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "ថ្នាក់រងនៃ {base} ត្រូវតែអនុវត្ត {function}()។"
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr "{service} តម្រូវឱ្យមានជម្រើស {option} ។ បន្ថែមវាទៅ OPTIONS ក្នុង {setting}។"
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr "{service} តម្រូវ​ឱ្យ​មាន​កញ្ចប់ {package} ។ ដំឡើង​វា​ជាមួយ៖ {command}"

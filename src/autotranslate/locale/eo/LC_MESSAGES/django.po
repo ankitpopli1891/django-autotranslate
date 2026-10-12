@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} devas esti importa vojo aŭ vortaro kun BACKEND-import vojo kaj "
+"laŭvola OPTIONS-vortaro."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "Ne eblis importi la tradukservon {service} ({source})."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Ne eblis importi la tradukservon {service}."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "La tradukservo {service} ({source}) ne estas subklaso de {base}."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "La tradukservo {service} ne estas subklaso de {base}."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Malvalidaj opcioj por la tradukservo {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Maŝine tradukas la mesaĝajn (.po) dosierojn kreitajn de {makemessages}. Nur "
+"novaj kaj ŝanĝitaj mesaĝoj estas tradukitaj. Tradukas la lokajn dosierujojn "
+"donitajn per {path} kaj {app}, aŭ tiujn en {locale_paths} se nek unu nek la "
+"alia estas donita."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "Lokaĵa dosierujo por traduki (eblas doni ĝin pli ol unufoje)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "Aplikaĵo kies mesaĝojn tradukos (povas esti donitaj pli ol unufoje)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Traduku nur ĉi tiun lokaĵaron, ekz. pt_BR aŭ pt-br (eblas doni ĝin pli ol "
+"unufoje). Defaŭlte ĉiu trovita lokaĵaro estas tradukita."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Traduku ĉiujn mesaĝojn denove, inkluzive tradukitajn mesaĝojn kaj mesaĝojn "
+"atendantajn revizion."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Marku maŝintradukojn kiel neklarajn por ke ili povu esti reviziitaj antaŭ "
+"uzo (neklaraj enigoj ne estas kompilitaj defaŭlte)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "La lingvo, en kiu la mesaĝoj estas skribitaj."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "La tradukservo uzota anstataŭ {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Montri progresan stangon (postulas la pakaĵon tqdm). Defaŭlte ĝi estas "
+"montrata se tqdm estas instalita kaj la eligo estas terminalo."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Tradukado estas malŝaltita. Agordu {setting} en viaj agordoj."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} postulas la pakaĵon {package} ."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Neniuj lokaj dosierujoj por traduki. Uzu {path} aŭ {app}, aŭ agordu "
+"{setting}."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Totalo"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "mesaĝoj"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "La dosierujo {directory} de lokaj agordoj ne ekzistas."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Preterlasante {locale}: ne elektita per {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Preterlasante {file}: {service} ne subtenas {language}."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "Tradukante {file} en {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} redonis la malĝustan nombron da tradukoj: atendita {sent}, "
+"ricevita {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"Forĵetis la tradukon de {source} ĉar ĝiaj provizoraĵoj aŭ markado ŝanĝiĝis: "
+"{translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Subklasoj de {base} devas efektivigi {function}()."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} postulas la opcion {option} . Aldonu ĝin al OPTIONS en {setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr "{service} bezonas la pakaĵon {package} . Instalu ĝin per: {command}"

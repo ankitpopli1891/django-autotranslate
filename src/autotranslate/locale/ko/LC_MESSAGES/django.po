@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} 가져오기 경로이거나 백엔드 가져오기 경로와 선택적 옵션 사전이 포함"
+"된 사전이어야 합니다."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "번역 서비스 {service} ({source})를 가져올 수 없습니다."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "번역 서비스 {service} 를 가져올 수 없습니다."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "번역 서비스 {service} ({source})는 {base} 의 하위 클래스가 아닙니다."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "번역 서비스 {service} {base} 의 하위 클래스가 아닙니다."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "번역 서비스 {service} 에 대한 잘못된 옵션입니다 : {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"{makemessages} 로 생성된 메시지(.po) 파일을 기계 번역합니다. 새 메시지와 변경"
+"된 메시지만 번역됩니다. {path} 와 {app} 으로 지정된 로케일 디렉터리 또는 둘 "
+"다 지정되지 않은 경우 {locale_paths} 에 있는 디렉터리를 번역합니다."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "번역할 로케일 디렉터리입니다(여러 번 지정할 수 있습니다)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "메시지를 번역해주는 앱 (메시지는 여러 번 입력할 수 있습니다)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"이 로케일(예: pt_BR 또는 pt-br)만 번역합니다(여러 번 지정할 수 있음). 기본적"
+"으로 발견된 모든 로케일이 번역됩니다."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"번역된 메시지와 검토 대기 중인 메시지를 포함하여 모든 메시지를 다시 번역합니"
+"다."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"기계 번역 결과를 '퍼지(fuzzy)'로 표시하여 사용 전에 검토할 수 있도록 합니다"
+"(퍼지 항목은 기본적으로 컴파일되지 않습니다)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "메시지가 작성된 언어."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "{setting} 대신 사용할 번역 서비스입니다."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"진행률 표시줄을 표시합니다(tqdm 패키지 필요). 기본적으로 tqdm이 설치되어 있으"
+"면 표시되며 출력은 터미널에 나타납니다."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "번역 기능이 비활성화되었습니다. 설정에서 {setting} 설정하세요."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} 사용하려면 {package} 패키지가 필요합니다."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"번역할 로케일 디렉터리가 없습니다. {path} 또는 {app} 사용하거나 {setting} 설"
+"정하세요."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "총"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "메시지"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "로케일 디렉터리 {directory} 존재하지 않습니다."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "{locale} 건너뜁니다. {option} 에서 선택되지 않았습니다."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "{file} 건너뜁니다: {service} {language} 지원하지 않습니다."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "{file} {target_language} 로 번역 중"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} 잘못된 번역 개수를 반환했습니다. 예상 개수는 {sent} 였지만, 실제 반"
+"환된 개수는 {received} 개입니다."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"{source} 의 플레이스홀더 또는 마크업이 변경되었으므로 해당 번역을 폐기했습니"
+"다: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "{base} 의 하위 클래스는 {function}()을 구현해야 합니다."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} 에는 {option} 옵션이 필요합니다. {setting} 의 OPTIONS에 해당 옵션"
+"을 추가하세요."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service} 이용하려면 {package} 패키지가 필요합니다. 다음 명령어를 사용하여 설"
+"치하세요: {command}"

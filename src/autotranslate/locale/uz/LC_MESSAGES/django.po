@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} import yo'li yoki BACKEND import yo'li va ixtiyoriy OPTIONS "
+"lug'ati bo'lgan lug'at bo'lishi kerak."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "Tarjima xizmatini {service} ({source}) import qilib bo'lmadi."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Tarjima xizmatini {service} import qilib bo'lmadi."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "{service} ({source}) tarjima xizmati {base} ning kichik sinfi emas."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "{service} tarjima xizmati {base} ning kichik sinfi emas."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Tarjima xizmati {service} uchun noto'g'ri variantlar: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"{makemessages} tomonidan yaratilgan xabar (.po) fayllarini mashina tarjima "
+"qiladi. Faqat yangi va o'zgartirilgan xabarlar tarjima qilinadi. {path} va "
+"{app} bilan berilgan mahalliy kataloglarni yoki agar ikkalasi ham "
+"ko'rsatilmagan bo'lsa, {locale_paths} dagi kataloglarni tarjima qiladi."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr ""
+"Tarjima qilinadigan mahalliy katalog (bir necha marta berilishi mumkin)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"Xabarlarini tarjima qilish uchun ilova (bir necha marta berilishi mumkin)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Faqat shu tilni tarjima qiling, masalan, pt_BR yoki pt-br (bir necha marta "
+"berilishi mumkin). Odatiy bo'lib, topilgan har bir til tarjima qilinadi."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Tarjima qilingan xabarlar va ko'rib chiqilishi kutilayotgan xabarlar kabi "
+"barcha xabarlarni qayta tarjima qiling."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Mashina tarjimalarini ishlatishdan oldin ko'rib chiqish uchun ularni noaniq "
+"deb belgilang (noaniq yozuvlar sukut bo'yicha kompilyatsiya qilinmaydi)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Xabarlar yozilgan til."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "{setting} oʻrniga ishlatiladigan tarjima xizmati."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Jarayon satrini ko'rsatish (tqdm paketini talab qiladi). Agar tqdm "
+"o'rnatilgan bo'lsa va chiqish terminal bo'lsa, u standart holatda "
+"ko'rsatiladi."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Tarjima o'chirilgan. Sozlamalaringizda {setting} ni o'rnating."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} uchun {package} paketi talab qilinadi."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Tarjima qilish uchun mahalliy kataloglar yo'q. {path} yoki {app} dan "
+"foydalaning yoki {setting} o'rnating."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Jami"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "xabarlar"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "{directory} mahalliy katalogi mavjud emas."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "{locale} ni o'tkazib yuborish: {option} bilan tanlanmagan."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr ""
+"{file} ni o'tkazib yuborish: {service} {language} ni qo'llab-quvvatlamaydi."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "{file} {target_language} ga tarjima qilish"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} noto'g'ri miqdordagi tarjimalarni qaytardi: kutilgan {sent}, qabul "
+"qilingan {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"{source} tarjimasi bekor qilindi, chunki uning joy egallovchilari yoki "
+"belgilari o'zgargan: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "{base} ning kichik sinflari {function}() ni amalga oshirishi kerak."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} uchun {option} opsiyasi kerak. Uni {setting} dagi OPTIONS ga "
+"qo'shing."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service} uchun {package} paketi kerak. Uni quyidagi buyruq bilan o'rnating: "
+"{command}"

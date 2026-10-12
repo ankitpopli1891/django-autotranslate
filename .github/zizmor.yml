@@ -1,0 +1,7 @@
+rules:
+  anonymous-definition:
+    disable: true
+  superfluous-actions:
+    ignore:
+      - update_coc.yml:49
+      - translate.yml:56

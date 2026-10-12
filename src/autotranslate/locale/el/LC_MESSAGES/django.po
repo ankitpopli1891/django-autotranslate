@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} πρέπει να είναι μια διαδρομή εισαγωγής ή ένα λεξικό με μια "
+"διαδρομή εισαγωγής BACKEND και ένα προαιρετικό λεξικό OPTIONS."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr ""
+"Δεν ήταν δυνατή η εισαγωγή της υπηρεσίας μετάφρασης {service} ({source})."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Δεν ήταν δυνατή η εισαγωγή της υπηρεσίας μετάφρασης {service}."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr ""
+"Η υπηρεσία μετάφρασης {service} ({source}) δεν είναι υποκλάση της {base}."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "Η υπηρεσία μετάφρασης {service} δεν είναι υποκλάση της {base}."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Μη έγκυρες επιλογές για την υπηρεσία μετάφρασης {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Μεταφράζει αυτόματα τα αρχεία μηνυμάτων (.po) που δημιουργούνται από το "
+"{makemessages}. Μεταφράζονται μόνο τα νέα και τα τροποποιημένα μηνύματα. "
+"Μεταφράζει τους καταλόγους τοπικών ρυθμίσεων που δίνονται με {path} και "
+"{app} ή αυτούς που βρίσκονται στο {locale_paths} εάν δεν δίνεται κανένα από "
+"τα δύο."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr ""
+"Ένας κατάλογος τοπικών ρυθμίσεων για μετάφραση (μπορεί να δοθεί περισσότερες "
+"από μία φορές)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"Μια εφαρμογή της οποίας τα μηνύματα προς μετάφραση (μπορούν να δοθούν "
+"περισσότερες από μία φορές)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Μεταφράστε μόνο αυτήν την τοπική ρύθμιση, π.χ. pt_BR ή pt-br (μπορεί να "
+"δοθεί περισσότερες από μία φορές). Από προεπιλογή, κάθε τοπική ρύθμιση που "
+"βρίσκεται μεταφράζεται."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Μεταφράστε ξανά όλα τα μηνύματα, συμπεριλαμβανομένων των μεταφρασμένων "
+"μηνυμάτων και των μηνυμάτων που εκκρεμούν έλεγχο."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Σημειώστε τις μηχανικές μεταφράσεις ως ασαφείς, ώστε να μπορούν να ελεγχθούν "
+"πριν από τη χρήση (οι ασαφείς καταχωρήσεις δεν μεταγλωττίζονται από "
+"προεπιλογή)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Η γλώσσα στην οποία είναι γραμμένα τα μηνύματα."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "Η υπηρεσία μετάφρασης που θα χρησιμοποιηθεί αντί για {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Εμφάνιση γραμμής προόδου (απαιτείται το πακέτο tqdm). Από προεπιλογή, "
+"εμφανίζεται εάν το tqdm είναι εγκατεστημένο και η έξοδος είναι τερματικό."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr ""
+"Η μετάφραση είναι απενεργοποιημένη. Ορίστε {setting} στις ρυθμίσεις σας."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "Το {option} απαιτεί το πακέτο {package} ."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Δεν υπάρχουν κατάλογοι τοπικών ρυθμίσεων για μετάφραση. Χρησιμοποιήστε το "
+"{path} ή {app} ή ορίστε {setting}."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Σύνολο"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "μηνύματα"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "Ο κατάλογος τοπικών ρυθμίσεων {directory} δεν υπάρχει."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Παράλειψη {locale}: δεν επιλέχθηκε με {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Παράλειψη {file}: {service} δεν υποστηρίζει {language}."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "Μετάφραση του {file} σε {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} επέστρεψε λάθος αριθμό μεταφράσεων: αναμενόμενο {sent}, ληφθέν "
+"{received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"Η μετάφραση του {source} απορρίφθηκε επειδή άλλαξαν τα placeholders ή η "
+"σήμανσή της: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Οι υποκλάσεις του {base} πρέπει να υλοποιούν το {function}()."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} απαιτεί την επιλογή {option} . Προσθέστε την στις ΕΠΙΛΟΓΕΣ στο "
+"{setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"Το {service} απαιτεί το πακέτο {package} . Εγκαταστήστε το με: {command}"

@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=((n%10 == 1) && (n%100 != 11) && (n%100 !"
+"=71) && (n%100 !=91) ? 0 :(n%10 == 2) && (n%100 != 12) && (n%100 !=72) && "
+"(n%100 !=92) ? 1 :(n%10 ==3 || n%10==4 || n%10==9) && (n%100 < 10 || n% 100 "
+"> 19) && (n%100 < 70 || n%100 > 79) && (n%100 < 90 || n%100 > 99) ? 2 :(n != "
+"0 && n % 1000000 == 0) ? 3 : 4);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} a rank bezañ un hent enporzhiañ pe ur geriadur gant un hent "
+"enporzhiañ BACKEND hag ur geriadur OPTIONS dibar."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "N'haller ket enporzhiañ ar servij troidigezh {service} ({source})."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "N'haller ket enporzhiañ ar servij troidigezh {service}."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "N'eo ket ar servij treiñ {service} ({source}) un isrummad eus {base}."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "N'eo ket ar servij treiñ {service} un isrummad eus {base}."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Dibarzhioù direizh evit ar servij troidigezh {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Treiñ dre urzhiataer ar restroù kemennadenn (.po) krouet gant "
+"{makemessages}. Ne vez troet nemet kemennadennoù nevez ha kemmet. Treiñ a ra "
+"ar c'havlec'hioù lec'hel roet gant {path} ha {app}, pe ar re a zo e "
+"{locale_paths} ma n'eo ket roet an eil pe egile."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr ""
+"Ur c'havlec'h lec'hel da dreiñ (gallout a ra bezañ roet muioc'h eget ur "
+"wech)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"Un arload a c'haller treiñ e gemennadennoù (a c'hall bezañ roet meur a wech)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Treiñ al lec'hiadur-mañ hepken, da skouer pt_BR pe pt-br (gallout a ra bezañ "
+"roet muioc'h eget ur wech). Dre ziouer e vez troet pep lec'hiadur kavet."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Troit en-dro an holl gemennadennoù, en o zouez ar c'hemennadennoù troet hag "
+"ar c'hemennadennoù o c'hortoz bezañ adwelet."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Merkañ an troidigezhioù dre ardivink evel displann evit ma c'hallfent bezañ "
+"adwelet a-raok o implij (ne vez ket kempennet dre ziouer an enrolladennoù "
+"displann)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Ar yezh ma vez skrivet ar c'hemennadennoù."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "Ar servij treiñ da implijout e-lec'h {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Diskouez ur varrenn araokaat (rekis eo ar pakad tqdm). Dre ziouer e vez "
+"diskouezet ma'z eo staliet tqdm ha ma'z eo un termenell an disoc'h."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Diweredekaet eo an droidigezh. Lakaat {setting} en ho arventennoù."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} a c'houlenn ar pakad {package} ."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Kavlec'h lec'hel ebet da dreiñ. Implijit {path} pe {app}, pe lakait "
+"{setting}."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Hollad"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "kemennadennoù"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "N'eus ket eus ar c'havlec'h lec'hel {directory} ."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Dilezel {locale}: n'eo ket bet diuzet gant {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Dilemel {file}: {service} ne skor ket {language}."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "O treiñ {file} e {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} en deus distroet an niver fall a droidigezhioù : gortozet {sent}, "
+"resevet {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"Dilezet eo bet troidigezh {source} rak kemmet eo bet e dalc'hadoù pe e "
+"merkoù : {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Isrummadoù {base} a rank lakaat da dalvezout {function}()."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} a c'houlenn an dibarzh {option} . Ouzhpennit anezhañ da OPTIONS e "
+"{setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service} a c'houlenn ar pakad {package} . Staliañ anezhañ gant : {command}"

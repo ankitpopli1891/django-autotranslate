@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} պետք է լինի ներմուծման ուղի կամ բառարան՝ BACKEND ներմուծման ուղիով "
+"և լրացուցիչ OPTIONS բառարանով։"
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr ""
+"Հնարավոր չէ ներմուծել թարգմանության ծառայությունը {service} ({source}):"
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Հնարավոր չէ ներմուծել թարգմանության ծառայությունը {service}։"
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "Թարգմանության ծառայությունը {service} ({source}) {base}-ի ենթադաս չէ։"
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "Թարգմանության ծառայությունը {service} {base}-ի ենթադաս չէ։"
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Թարգմանության ծառայության {service} համար անվավեր տարբերակներ՝ {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Մեքենայական թարգմանություն է կատարում {makemessages} ի կողմից ստեղծված "
+"հաղորդագրության (.po) ֆայլերի համար։ Թարգմանվում են միայն նոր և փոփոխված "
+"հաղորդագրությունները։ Թարգմանում է {path} և {app} ով տրված տեղայնացման "
+"դիրեկտորիաները կամ {locale_paths} ում գտնվողները, եթե ոչ մեկը տրված չէ։"
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr ""
+"Թարգմանելու համար տեղայնացման գրացուցակ (կարող է տրվել մեկից ավելի անգամ):"
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"Հավելված, որի հաղորդագրությունները թարգմանելու համար (կարող են տրվել մեկից "
+"ավելի անգամ):"
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Թարգմանեք միայն այս լեզվական արժեքը, օրինակ՝ pt_BR կամ pt-br (կարող է տրվել "
+"մեկից ավելի անգամ): Ըստ լռելյայնի՝ թարգմանվում է գտնված յուրաքանչյուր "
+"լեզվական արժեք:"
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Կրկին թարգմանեք բոլոր հաղորդագրությունները, ներառյալ թարգմանված "
+"հաղորդագրությունները և վերանայման սպասող հաղորդագրությունները:"
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Նշեք մեքենայական թարգմանությունները որպես աղոտ, որպեսզի դրանք կարողանան "
+"վերանայվել օգտագործելուց առաջ (աղոտ գրառումները լռելյայնորեն չեն "
+"կոմպիլացվում):"
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Լեզուն, որով գրված են հաղորդագրությունները։"
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "{setting}-ի փոխարեն օգտագործվող թարգմանչական ծառայությունը։"
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Ցուցադրել առաջընթացի գոտին (պահանջվում է tqdm փաթեթը): Ըստ լռելյայնի, այն "
+"ցուցադրվում է, եթե tqdm-ը տեղադրված է և արդյունքը տերմինալ է:"
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Թարգմանությունն անջատված է։ Կարգավորումներում սահմանեք {setting} ։"
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} ը պահանջում է {package} փաթեթը։"
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Թարգմանելու համար տեղայնացման գրացուցակներ չկան: Օգտագործեք {path} կամ "
+"{app}, կամ սահմանեք {setting}:"
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Ընդհանուր"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "հաղորդագրություններ"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "{directory} տեղային գրացուցակը գոյություն չունի։"
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Բաց թողնել {locale} ը. չի ընտրվել {option}-ով։"
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Բաց թողնելով {file} ը. {service} չի աջակցում {language}։"
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "{file} ը թարգմանվում է {target_language} լեզվով"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} ը վերադարձրեց թարգմանությունների սխալ քանակ՝ expected {sent}, "
+"received {received}:"
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"{source} -ի թարգմանությունը մերժվեց, քանի որ դրա տեղապահները կամ նշագրումը "
+"փոխվել են՝ {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "{base} -ի ենթադասերը պետք է իրականացնեն {function}():"
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} ը պահանջում է {option} տարբերակը։ Ավելացրեք այն {setting}-ի "
+"OPTIONS-ին։"
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr "{service} ը պահանջում է {package} փաթեթը։ Տեղադրեք այն {command} -ով։"

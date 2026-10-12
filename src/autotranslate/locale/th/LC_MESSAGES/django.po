@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} ต้องเป็นเส้นทางการนำเข้าหรือพจนานุกรมที่มีเส้นทางการนำเข้า BACKEND "
+"และพจนานุกรม OPTIONS ที่เป็นตัวเลือก"
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "ไม่สามารถนำเข้าบริการแปล {service} ({source}) ได้"
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "ไม่สามารถนำเข้าบริการแปลภาษา {service} ได้"
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "บริการแปลภาษา {service} ({source}) ไม่ใช่คลาสย่อยของ {base}"
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "บริการแปลภาษา {service} ไม่ใช่คลาสย่อยของ {base}"
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "ตัวเลือกไม่ถูกต้องสำหรับบริการแปล {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"แปลไฟล์ข้อความ (.po) ที่สร้างโดย {makemessages} ด้วยเครื่องมือแปลอัตโนมัติ "
+"เฉพาะข้อความใหม่และข้อความที่เปลี่ยนแปลงเท่านั้นที่จะได้รับการแปล แปลไดเร็กทอรีภาษาที่ระบุด้วย "
+"{path} และ {app} หรือไดเร็กทอรีใน {locale_paths} หากไม่ได้ระบุทั้งสองอย่าง"
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "ระบุไดเร็กทอรีภาษาที่จะแปล (สามารถระบุได้มากกว่าหนึ่งครั้ง)"
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "แอปที่ใช้แปลข้อความ (สามารถป้อนข้อความได้หลายครั้ง)"
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"แปลเฉพาะภาษาที่ระบุ เช่น pt_BR หรือ pt-br (สามารถระบุได้มากกว่าหนึ่งครั้ง) โดยค่าเริ่มต้น "
+"ระบบจะแปลทุกภาษาที่พบ"
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr "โปรดแปลข้อความทั้งหมดอีกครั้ง รวมถึงข้อความที่แปลแล้วและข้อความที่รอการตรวจสอบ"
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"ทำเครื่องหมายคำแปลอัตโนมัติว่าเป็นแบบ \"คลุมเครือ\" เพื่อให้สามารถตรวจสอบก่อนใช้งานได้ "
+"(โดยค่าเริ่มต้นจะไม่แสดงรายการแบบคลุมเครือ)"
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "ภาษาที่ใช้เขียนข้อความเหล่านั้น"
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "บริการแปลภาษาที่จะใช้แทน {setting}"
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"แสดงแถบแสดงความคืบหน้า (ต้องใช้แพ็กเกจ tqdm) โดยค่าเริ่มต้นจะแสดงขึ้นหากติดตั้ง tqdm "
+"แล้วและผลลัพธ์แสดงในเทอร์มินัล"
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "การแปลถูกปิดใช้งานอยู่ โปรดตั้งค่า {setting} ในการตั้งค่าของคุณ"
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} ต้องการแพ็กเกจ {package}"
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr "ไม่มีไดเร็กทอรีภาษาให้แปล ใช้ {path} หรือ {app} หรือตั้งค่า {setting}"
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "ทั้งหมด"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "ข้อความ"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "ไดเร็กทอรีท้องถิ่น {directory} ไม่มีอยู่จริง"
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "ข้าม {locale}: ไม่ได้เลือกด้วย {option}"
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "ข้ามไฟล์ {file} เนื่องจาก {service} ไม่รองรับ {language}"
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "กำลังแปล {file} เป็น {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr "{service} ส่งคืนจำนวนคำแปลที่ไม่ถูกต้อง: คาดหวัง {sent} แต่ได้รับ {received}"
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"ยกเลิกการแปลของ {source} เนื่องจากตัวยึดตำแหน่งหรือมาร์กอัปมีการเปลี่ยนแปลง: "
+"{translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "คลาสย่อยของ {base} ต้องใช้งาน {function}()"
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr "{service} ต้องการตัวเลือก {option} เพิ่มตัวเลือกนี้ลงใน OPTIONS ใน {setting}"
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr "{service} ต้องการแพ็คเกจ {package} ติดตั้งโดยใช้คำสั่ง: {command}"

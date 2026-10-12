@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} phải là một đường dẫn nhập khẩu hoặc một từ điển có đường dẫn nhập "
+"khẩu BACKEND và một từ điển OPTIONS tùy chọn."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "Không thể nhập dịch vụ dịch thuật {service} ({source})."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Không thể nhập dịch vụ dịch thuật {service}."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr ""
+"Dịch vụ dịch thuật {service} ({source}) không phải là lớp con của {base}."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "Dịch vụ dịch thuật {service} không phải là lớp con của {base}."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Các tùy chọn không hợp lệ cho dịch vụ dịch thuật {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Dịch máy các tệp tin nhắn (.po) được tạo bởi {makemessages}. Chỉ những tin "
+"nhắn mới và đã thay đổi mới được dịch. Dịch các thư mục ngôn ngữ được cung "
+"cấp bằng {path} và {app}, hoặc các thư mục trong {locale_paths} nếu không có "
+"thư mục nào được cung cấp."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "Thư mục ngôn ngữ cần dịch (có thể cung cấp nhiều lần)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"Một ứng dụng có chức năng dịch tin nhắn (có thể được cung cấp nhiều lần)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Chỉ dịch ngôn ngữ/vùng miền này, ví dụ: pt_BR hoặc pt-br (có thể cung cấp "
+"nhiều hơn một lần). Theo mặc định, mọi ngôn ngữ/vùng miền được tìm thấy đều "
+"được dịch."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Dịch lại tất cả các tin nhắn, bao gồm cả các tin nhắn đã dịch và các tin "
+"nhắn đang chờ xem xét."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Đánh dấu các bản dịch máy là \"không rõ nghĩa\" để có thể xem xét trước khi "
+"sử dụng (các mục không rõ nghĩa sẽ không được biên dịch theo mặc định)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Ngôn ngữ mà các tin nhắn được viết."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "Dịch vụ dịch thuật cần sử dụng thay cho {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Hiển thị thanh tiến trình (yêu cầu gói tqdm). Theo mặc định, thanh tiến "
+"trình sẽ được hiển thị nếu tqdm đã được cài đặt và đầu ra sẽ là một cửa sổ "
+"terminal."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr ""
+"Chức năng dịch đã bị vô hiệu hóa. Vui lòng thiết lập {setting} trong cài đặt "
+"của bạn."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} yêu cầu gói {package} ."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Không có thư mục ngôn ngữ nào để dịch. Sử dụng {path} hoặc {app}, hoặc thiết "
+"lập {setting}."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Tổng cộng"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "tin nhắn"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "Thư mục ngôn ngữ {directory} không tồn tại."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Bỏ qua {locale}: không được chọn bằng {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Bỏ qua {file}: {service} không hỗ trợ {language}."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "Đang dịch tệp {file} sang ngôn ngữ đích {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} đã trả về số lượng bản dịch không chính xác: dự kiến {sent}, nhận "
+"được {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"Đã loại bỏ bản dịch của {source} vì các phần giữ chỗ hoặc đánh dấu của nó đã "
+"thay đổi: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Các lớp con của {base} phải triển khai {function}()."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} yêu cầu tùy chọn {option} . Hãy thêm tùy chọn này vào OPTIONS "
+"trong {setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr "{service} yêu cầu gói {package} . Hãy cài đặt nó bằng lệnh: {command}"

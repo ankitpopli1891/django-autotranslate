@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} 、インポートパス、または BACKEND インポートパスとオプションの "
+"OPTIONS 辞書を含む辞書である必要があります。"
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "翻訳サービス{service} ({source}) をインポートできませんでした。"
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "翻訳サービス{service}をインポートできませんでした。"
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "翻訳サービス{service} ({source}) は{base}のサブクラスではありません。"
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "翻訳サービス{service}は{base}のサブクラスではありません。"
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "翻訳サービス{service}のオプションが無効です: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"{makemessages}で作成されたメッセージ (.po) ファイルを機械翻訳します。新規メッ"
+"セージと変更されたメッセージのみが翻訳されます。 {path}と{app}で指定されたロ"
+"ケールディレクトリ、またはどちらも指定されていない場合は{locale_paths}で指定"
+"されたディレクトリを翻訳します。"
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "翻訳対象のロケールディレクトリ（複数指定可能）。"
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "翻訳するメッセージを受け取るアプリ（複数回指定可能）。"
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"指定されたロケール（例：pt_BR または pt-br）のみを翻訳します（複数指定可"
+"能）。デフォルトでは、検出されたすべてのロケールが翻訳されます。"
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"翻訳済みのメッセージやレビュー待ちのメッセージも含め、すべてのメッセージを再"
+"度翻訳してください。"
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"機械翻訳をあいまい翻訳としてマークすることで、使用前にレビューできるようにな"
+"ります（あいまい翻訳はデフォルトではコンパイルされません）。"
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "メッセージが書かれている言語。"
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "{setting}の代わりに使用する翻訳サービス。"
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"進行状況バーを表示します（tqdmパッケージが必要です）。デフォルトでは、tqdmが"
+"インストールされており、出力先が端末の場合に表示されます。"
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "翻訳機能は無効になっています。設定で{setting}を変更してください。"
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option}には{package}パッケージが必要です。"
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"翻訳するロケールディレクトリがありません。 {path}または{app}を使用するか、 "
+"{setting}を設定してください。"
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "合計"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "メッセージ"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "ロケールディレクトリ{directory}が存在しません。"
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "{locale}をスキップします: {option}で選択されていません。"
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "{file}をスキップします: {service}は{language}をサポートしていません。"
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "{file}を{target_language}に翻訳します"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service}は誤った数の翻訳を返しました: 期待値{sent}、受信値{received}。"
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"プレースホルダーまたはマークアップが変更されたため、 {source}の翻訳を破棄しま"
+"した: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "{base}のサブクラスは{function}() を実装する必要があります。"
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service}には{option}オプションが必要です。 {setting}の OPTIONS に追加してく"
+"ださい。"
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service}には{package}パッケージが必要です。以下のコマンドでインストールして"
+"ください: {command}"

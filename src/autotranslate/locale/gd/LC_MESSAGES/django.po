@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : "
+"(n > 2 && n < 20) ? 2 : 3;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"Feumaidh {setting} a bhith na shlighe in-mhalairt no na fhaclair le slighe "
+"in-mhalairt BACKEND agus faclair OPTIONS roghainneil."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr ""
+"Cha b’ urrainnear an t-seirbheis eadar-theangachaidh {service} ({source}) a "
+"thoirt a-steach."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr ""
+"Cha b’ urrainnear an t-seirbheis eadar-theangachaidh {service} a thoirt a-"
+"steach."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr ""
+"Chan e fo-chlas de {base} a th' anns an t-seirbheis eadar-theangachaidh "
+"{service} ({source})."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr ""
+"Chan e fo-chlas de {base} a th' anns an t-seirbheis eadar-theangachaidh "
+"{service} ."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr ""
+"Roghainnean mì-dhligheach airson na seirbheis eadar-theangachaidh {service}: "
+"{error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Eadar-theangaichidh inneal na faidhlichean teachdaireachd (.po) a chruthaich "
+"{makemessages}. Chan eil ach teachdaireachdan ùra is atharraichte air an "
+"eadar-theangachadh. Eadar-theangaichidh e na clàran-stiùiridh ionadail a tha "
+"air an toirt seachad le {path} agus {app}, no an fheadhainn ann an "
+"{locale_paths} mura tèid gin dhiubh a thoirt seachad."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr ""
+"Eòlaire ionadail airson eadar-theangachadh (faodar a thoirt seachad barrachd "
+"air aon uair)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"Aplacaid aig a bheil teachdaireachdan ri eadar-theangachadh (faodar a thoirt "
+"seachad barrachd air aon uair)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Na h-eadar-theangaich ach an locale seo, m.e. pt_BR no pt-br (faodar a "
+"thoirt seachad barrachd air aon uair). Gu gnàthach, thèid gach locale a "
+"lorgar eadar-theangachadh."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Eadar-theangaich a h-uile teachdaireachd a-rithist, a’ gabhail a-steach "
+"teachdaireachdan eadar-theangaichte agus teachdaireachdan a tha a’ feitheamh "
+"ri ath-sgrùdadh."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Comharraich eadar-theangachaidhean inneal mar neo-shoilleir gus an tèid an "
+"ath-sgrùdadh mus tèid an cleachdadh (chan eil inntrigidhean neo-shoilleir "
+"air an cruinneachadh gu bunaiteach)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "A’ chànan anns a bheil na teachdaireachdan sgrìobhte."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "An t-seirbheis eadar-theangachaidh ri chleachdadh an àite {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Seall bàr adhartais (feumaidh am pasgan tqdm a bhith ann). Gu gnàthach, "
+"chithear e ma tha tqdm air a stàladh agus gur e crìoch-uidhe an toradh."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr ""
+"Tha an eadar-theangachadh à comas. Suidhich {setting} anns na roghainnean "
+"agad."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "Tha feum aig {option} air a’ phacaid {package} ."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Chan eil clàran-stiùiridh ionadail ann airson eadar-theangachadh. Cleachd "
+"{path} no {app}, no suidhich {setting}."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Iomlan"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "teachdaireachdan"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "Chan eil an eòlaire ionadail {directory} ann."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "A’ leum thairis air {locale}: cha deach a thaghadh le {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "A’ leum {file}: Chan eil {service} a’ toirt taic do {language}."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "Ag eadar-theangachadh {file} gu {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"Thill {service} an àireamh cheàrr de dh’eadar-theangachaidhean: bha dùil ri "
+"{sent}, fhuaireadh {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"Chaidh an t-eadar-theangachadh de {source} a thilgeil air falbh leis gun "
+"deach na luchd-àite no an comharrachadh aige atharrachadh: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Feumaidh fo-chlasaichean de {base} {function}() a chur an gnìomh."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"Tha feum aig {service} air an roghainn {option} . Cuir ris e ri OPTIONS ann "
+"an {setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"Tha feum aig {service} air a’ phacaid {package} . Stàlaich e le: {command}"

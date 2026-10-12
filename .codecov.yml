@@ -1,0 +1,3 @@
+coverage:
+  fixes:
+    - "__init__.py::autotranslate/__init__.py"

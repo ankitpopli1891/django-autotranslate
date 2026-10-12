@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} သည် import path သို့မဟုတ် BACKEND import path နှင့် optional OPTIONS "
+"dictionary ပါသော dictionary ဖြစ်ရမည်။"
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "ဘာသာပြန်ဝန်ဆောင်မှု {service} ({source}) ကို ထည့်သွင်း၍မရပါ။"
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "ဘာသာပြန်ဝန်ဆောင်မှု {service} ကို ထည့်သွင်း၍မရပါ။"
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "ဘာသာပြန်ဝန်ဆောင်မှု {service} ({source}) သည် {base}၏ subclass မဟုတ်ပါ။"
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "ဘာသာပြန်ဝန်ဆောင်မှု {service} သည် {base}၏ subclass မဟုတ်ပါ။"
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "ဘာသာပြန်ဝန်ဆောင်မှု {service} အတွက် မမှန်ကန်သော ရွေးချယ်စရာများ : {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"{makemessages} မှ ဖန်တီးထားသော မက်ဆေ့ချ် (.po) ဖိုင်များကို စက်ဖြင့် ဘာသာပြန်ပေးသည်။ အသစ်နှင့် "
+"ပြောင်းလဲထားသော မက်ဆေ့ချ်များကိုသာ ဘာသာပြန်ပေးသည်။ {path} နှင့် {app} ဖြင့် ပေးထားသော "
+"locale directory များ သို့မဟုတ် နှစ်ခုမှ မပေးထားပါက {locale_paths} ရှိ locale directory "
+"များကို ဘာသာပြန်ပေးသည်။"
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "ဘာသာပြန်ရန် ဒေသဆိုင်ရာ လမ်းညွှန် (တစ်ကြိမ်ထက်ပို၍ ပေးနိုင်ပါသည်)။"
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "ဘာသာပြန်ရန် မက်ဆေ့ချ်များပါသည့် အက်ပ်တစ်ခု (တစ်ကြိမ်ထက်ပို၍ ပေးနိုင်ပါသည်)။"
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"ဤဒေသကိုသာ ဘာသာပြန်ပါ၊ ဥပမာ pt_BR သို့မဟုတ် pt-br (တစ်ကြိမ်ထက်ပိုပေးနိုင်ပါသည်)။ မူရင်းအားဖြင့် "
+"တွေ့ရှိသော ဒေသတိုင်းကို ဘာသာပြန်ပေးပါသည်။"
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"ဘာသာပြန်ထားသော မက်ဆေ့ချ်များနှင့် ပြန်လည်သုံးသပ်ရန် စောင့်ဆိုင်းနေသော မက်ဆေ့ချ်များ အပါအဝင် "
+"မက်ဆေ့ချ်အားလုံးကို ပြန်လည်ဘာသာပြန်ပါ။"
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"စက်ဘာသာပြန်ဆိုချက်များကို အသုံးမပြုမီ ပြန်လည်သုံးသပ်နိုင်ရန် fuzzy အဖြစ် မှတ်သားပါ (fuzzy entries "
+"များကို မူရင်းအားဖြင့် စုစည်းမထားပါ။)"
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "မက်ဆေ့ချ်များကို ရေးသားထားသော ဘာသာစကား။"
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "{setting} အစား အသုံးပြုရမည့် ဘာသာပြန်ဝန်ဆောင်မှု။"
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"တိုးတက်မှုဘားပြပါ (tqdm package လိုအပ်သည်)။ default အားဖြင့် tqdm ကို install လုပ်ပြီး "
+"output က terminal ဆိုရင် ပြပါတယ်။"
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "ဘာသာပြန်ခြင်းကို ပိတ်ထားသည်။ သင့်ဆက်တင်များတွင် {setting} သတ်မှတ်ပါ။"
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} သည် {package} package ကို လိုအပ်သည်။"
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"ဘာသာပြန်ရန် locale directory များ မရှိပါ။ {path} သို့မဟုတ် {app} ကို အသုံးပြုပါ၊ သို့မဟုတ် "
+"{setting} သတ်မှတ်ပါ။"
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "စုစုပေါင်း"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "မက်ဆေ့ချ်များ"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "ဒေသဆိုင်ရာ လမ်းညွှန် {directory} မရှိပါ။"
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "{locale} ကို ကျော်နေသည် : {option} ဖြင့် ရွေးချယ်မထားပါ။"
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "{file} ကို ကျော်သွားခြင်း : {service} သည် {language} ကို မပံ့ပိုးပါ။"
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "{file} ကို {target_language} သို့ ဘာသာပြန်နေသည်"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} သည် မှားယွင်းသော ဘာသာပြန်ဆိုချက် အရေအတွက်ကို ပြန်ပေးသည်- expected {sent}, "
+"received {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"{source} ၏ ဘာသာပြန်ဆိုချက်ကို ၎င်း၏ placeholders သို့မဟုတ် markup ပြောင်းလဲသွားသောကြောင့် "
+"ဖယ်ထုတ်လိုက်ပါပြီ- {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "{base} ရဲ့ Subclass တွေက {function}() ကို implement လုပ်ရပါမယ်။"
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} သည် {option} option ကို လိုအပ်သည်။ ၎င်းကို {setting} ရှိ OPTIONS တွင် ထည့်ပါ။"
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service} သည် {package} package ကို လိုအပ်သည်။ ၎င်းကို အောက်ပါဖြင့် ထည့်သွင်းပါ- {command}"

@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != "
+"11) ? 2 : 3;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"Rhaid i {setting} fod yn llwybr mewnforio neu'n eiriadur gyda llwybr "
+"mewnforio BACKEND a geiriadur OPTIONS dewisol."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "Methwyd mewnforio'r gwasanaeth cyfieithu {service} ({source})."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Methwyd mewnforio'r gwasanaeth cyfieithu {service}."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr ""
+"Nid yw'r gwasanaeth cyfieithu {service} ({source}) yn is-ddosbarth o {base}."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "Nid yw'r gwasanaeth cyfieithu {service} yn is-ddosbarth o {base}."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Dewisiadau annilys ar gyfer y gwasanaeth cyfieithu {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Cyfieithu peirianyddol y ffeiliau neges (.po) a grëwyd gan {makemessages}. "
+"Dim ond negeseuon newydd a negeseuon wedi'u newid sy'n cael eu cyfieithu. Yn "
+"cyfieithu'r cyfeiriaduron lleol a roddir gyda {path} ac {app}, neu'r rhai yn "
+"{locale_paths} os nad yw'r naill na'r llall wedi'i roi."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "Cyfeiriadur lleoliad i'w gyfieithu (gellir ei roi fwy nag unwaith)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "Ap y mae ei negeseuon i'w cyfieithu (gellir eu rhoi fwy nag unwaith)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Dim ond cyfieithu'r lleoliad hwn, e.e. pt_BR neu pt-br (gellir ei roi fwy "
+"nag unwaith). Yn ddiofyn, caiff pob lleoliad a geir ei gyfieithu."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Cyfieithwch bob neges eto, gan gynnwys negeseuon wedi'u cyfieithu a "
+"negeseuon sy'n aros am adolygiad."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Marciwch gyfieithiadau peirianyddol fel rhai aneglur fel y gellir eu "
+"hadolygu cyn eu defnyddio (nid yw cofnodion aneglur yn cael eu llunio yn "
+"ddiofyn)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Yr iaith y mae'r negeseuon wedi'u hysgrifennu ynddi."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "Y gwasanaeth cyfieithu i'w ddefnyddio yn lle {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Dangos bar cynnydd (mae angen y pecyn tqdm). Yn ddiofyn, dangosir os yw tqdm "
+"wedi'i osod a bod yr allbwn yn derfynell."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Mae cyfieithu wedi'i analluogi. Gosodwch {setting} yn eich gosodiadau."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "Mae angen y pecyn {package} ar {option} ."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Dim cyfeiriaduron lleol i'w cyfieithu. Defnyddiwch {path} neu {app}, neu "
+"gosodwch {setting}."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Cyfanswm"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "negeseuon"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "Nid yw'r cyfeiriadur lleol {directory} yn bodoli."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Hepgor {locale}: heb ei ddewis gyda {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Hepgor {file}: Nid yw {service} yn cefnogi {language}."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "Cyfieithu {file} i {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"Dychwelodd {service} y nifer anghywir o gyfieithiadau: disgwylir {sent}, "
+"derbynnir {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"Cafodd y cyfieithiad o {source} ei daflu oherwydd bod ei ddalfeydd neu ei "
+"farcio wedi newid: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Rhaid i is-ddosbarthiadau {base} weithredu {function}()."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"Mae angen yr opsiwn {option} ar {service} . Ychwanegwch ef at OPTIONS yn "
+"{setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr "Mae angen y pecyn {package} ar {service} . Gosodwch ef gyda: {command}"

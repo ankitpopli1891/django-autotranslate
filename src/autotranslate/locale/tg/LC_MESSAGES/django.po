@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} бояд роҳи воридот ё луғат бо роҳи воридоти BACKEND ва луғати "
+"ихтиёрии OPTIONS бошад."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "Хидмати тарҷумаи {service} ({source})-ро ворид кардан ғайриимкон буд."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "Хидмати тарҷумаи {service}-ро ворид кардан ғайриимкон буд."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "Хидмати тарҷума {service} ({source}) зерсинфи {base} нест."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "Хидмати тарҷума {service} зерсинфи {base} нест."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "Имконоти нодуруст барои хидмати тарҷума {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"Файлҳои паём (.po)-ро, ки аз ҷониби {makemessages} сохта шудаанд, тарҷумаи "
+"мошинӣ мекунад. Танҳо паёмҳои нав ва тағйирёфта тарҷума карда мешаванд. "
+"Феҳристҳои маҳаллии додашударо бо {path} ва {app} ё онҳоеро, ки дар "
+"{locale_paths} дода шудаанд, агар ҳеҷ яке аз онҳо дода нашуда бошад, тарҷума "
+"мекунад."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr ""
+"Феҳристи маҳаллӣ барои тарҷума (метавонад беш аз як маротиба дода шавад)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"Барномае, ки паёмҳояшро тарҷума кардан мумкин аст (метавонад беш аз як "
+"маротиба дода шавад)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"Танҳо ин маҳаллиро тарҷума кунед, масалан, pt_BR ё pt-br (беш аз як маротиба "
+"дода мешавад). Пешфарз ҳар як маҳалли ёфтшуда тарҷума мешавад."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"Ҳамаи паёмҳоро, аз ҷумла паёмҳои тарҷумашуда ва паёмҳои интизори баррасӣ, "
+"дубора тарҷума кунед."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"Тарҷумаҳои мошиниро ҳамчун норавшан қайд кунед, то онҳоро пеш аз истифода аз "
+"назар гузаронед (вурудҳои норавшан бо нобаёнӣ тартиб дода намешаванд)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "Забоне, ки паёмҳо бо он навишта шудаанд."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "Хидмати тарҷума барои истифода ба ҷои {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"Сатри пешрафтро нишон диҳед (бастаи tqdm-ро талаб мекунад). Пешфарз он нишон "
+"дода мешавад, агар tqdm насб шуда бошад ва натиҷаи он терминал бошад."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "Тарҷума ғайрифаъол аст. Дар танзимоти худ {setting} муқаррар кунед."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "Барои {option} бастаи {package} лозим аст."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"Феҳристҳои маҳаллӣ барои тарҷума вуҷуд надоранд. Аз {path} ё {app} истифода "
+"баред, ё аз {setting} set кунед."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "Ҷамъ"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "паёмҳо"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "Феҳристи маҳаллии {directory} вуҷуд надорад."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "Гузаронидани {locale}: бо {option} интихоб нашудааст."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "Гузаронидани {file}: {service} {language} дастгирӣ намекунад."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "Тарҷумаи {file} ба {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} шумораи нодурусти тарҷумаҳоро баргардонд: expected {sent}, "
+"received {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"Тарҷумаи {source} -ро рад карданд, зеро ҷойнишинҳо ё аломатгузории он тағйир "
+"ёфт: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "Зерсинфҳои {base} бояд {function}()-ро амалӣ кунанд."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} ба имконоти {option} ниёз дорад. Онро ба OPTIONS дар {setting} "
+"илова кунед."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"Барои {service} бастаи {package} лозим аст. Онро бо ин насб кунед: {command}"

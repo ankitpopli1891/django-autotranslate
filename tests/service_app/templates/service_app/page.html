@@ -1,0 +1,3 @@
+{% load i18n %}
+<a href="/logout">{% translate "Sign out" %}</a>
+<p>{% blocktranslate with name=user.name %}Signed in as {{ name }}{% endblocktranslate %}</p>

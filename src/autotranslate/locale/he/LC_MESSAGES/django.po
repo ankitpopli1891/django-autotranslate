@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: 2;\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} חייב להיות נתיב ייבוא או מילון עם נתיב ייבוא BACKEND ומילון "
+"OPTIONS אופציונלי."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "לא ניתן היה לייבא את שירות התרגום {service} ({source})."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "לא ניתן היה לייבא את שירות התרגום {service}."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "שירות התרגום {service} ({source}) אינו תת-מחלקה של {base}."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "שירות התרגום {service} אינו תת-מחלקה של {base}."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "אפשרויות לא חוקיות עבור שירות התרגום {service}: {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"תרגום מכונה של קבצי ההודעות (.po) שנוצרו על ידי {makemessages}. רק הודעות "
+"חדשות והודעות שהשתנו מתורגמות. מתרגם את ספריות ה-locale שניתנו עם {path} ו- "
+"{app}, או את אלו הנמצאות ב- {locale_paths} אם אף אחת מהן לא צוינה."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "ספריית מקומית לתרגום (ניתן לתת אותה יותר מפעם אחת)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "אפליקציה שהודעותיה לתרגום (ניתן לתת יותר מפעם אחת)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"תרגם רק את הלוקאל הזה, לדוגמה pt_BR או pt-br (ניתן לתת אותו יותר מפעם אחת). "
+"כברירת מחדל, כל לוקאל שנמצא מתורגם."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr "תרגם שוב את כל ההודעות, כולל הודעות מתורגמות והודעות הממתינות לבדיקה."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"סמן תרגומי מכונה כמעורפלים כדי שניתן יהיה לבדוק אותם לפני השימוש (רשומות "
+"מעורפלות אינן מתבצעות כברירת מחדל)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "השפה בה נכתבות ההודעות."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "שירות התרגום שיש להשתמש בו במקום {setting}."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"הצג סרגל התקדמות (דורש את חבילת tqdm). כברירת מחדל, הוא מוצג אם tqdm מותקן "
+"והפלט הוא טרמינל."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "התרגום מושבת. הגדר {setting} בהגדרות שלך."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} דורש את החבילה {package} ."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"אין ספריות מקומיות לתרגום. השתמש ב- {path} או {app}, או הגדר את {setting}."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "סַך הַכֹּל"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "הודעות"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "ספריית הלוקאל {directory} אינה קיימת."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "דילוג על {locale}: לא נבחר עם {option}."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "דילוג על {file}: {service} אינו תומך ב- {language}."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "תרגום {file} ל- {target_language}"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} החזיר מספר שגוי של תרגומים: ציפו ל- {sent}, התקבלו ל- {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"התרגום של {source} נמחק מכיוון שמצייני המיקום או הסימון שלו השתנו: "
+"{translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "תת-מחלקות של {base} חייבות לממש את {function}()."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr "{service} דורש את האפשרות {option} . הוסף אותה לאפשרויות ב- {setting}."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr "{service} דורש את החבילה {package} . יש להתקין אותה באמצעות: {command}"

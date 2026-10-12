@@ -1,0 +1,291 @@
+name: Test
+
+# Standard testing workflow: SQLite on Linux, Windows, and macOS.
+# If your app needs database-specific testing (postgres, mysql, mariadb, oracle)
+# use test-db.yml instead and delete this file.
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    tags-ignore:
+      - "*"
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+    paths:
+      - "src/**"
+      - "tests/**"
+      - ".github/workflows/test.yml"
+      - "pyproject.toml"
+      - "justfile"
+  merge_group:
+  workflow_call:
+  workflow_dispatch:
+    inputs:
+      debug:
+        description: "Open ssh debug session."
+        required: true
+        default: false
+        type: boolean
+      clear_cache:
+        description: "Clear GitHub Tool cache."
+        required: true
+        default: false
+        type: boolean
+  schedule:
+    # Every Sunday at 9:00 AM Los Angeles time (17:00 UTC).
+    - cron: "0 17 * * 0"
+
+jobs:
+  test-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14", "3.15"]
+        django-version:
+          - "dj52" # LTS April 2028
+          - "dj61" # December 2027
+        dependencies:
+          - "lowest-direct"
+          - "highest"
+        exclude:
+          # test lower dependency bounds on the oldest python only
+          - python-version: "3.11"
+            dependencies: "highest"
+          - python-version: "3.12"
+            dependencies: "lowest-direct"
+          - python-version: "3.13"
+            dependencies: "lowest-direct"
+          - python-version: "3.14"
+            dependencies: "lowest-direct"
+          - python-version: "3.15"
+            dependencies: "lowest-direct"
+
+          - django-version: "dj61"
+            dependencies: "lowest-direct"
+
+          # dj61 requires python >= 3.12
+          - python-version: "3.11"
+            django-version: "dj61"
+    env:
+      COVERAGE_FILE: linux-py${{ matrix.python-version }}-${{ matrix.django-version }}-sqlite.coverage
+      TEST_PYTHON_VERSION: ${{ matrix.python-version }}
+      TEST_DJANGO_VERSION: ${{ matrix.django-version }}
+      TEST_DATABASE_VERSION: "sqlite"
+      DEPENDENCY_RESOLUTION: ${{ matrix.dependencies }}
+    steps:
+      - name: Clear Tool cache
+        if: ${{ github.event.inputs.clear_cache == 'true' }}
+        run: sudo rm -rf /opt/hostedtoolcache
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        id: sp
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+      - name: Install uv
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          enable-cache: false
+      - name: Setup Just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3
+        with:
+          just-version: "1.58.0"
+      - name: Install Emacs
+        if: ${{ github.event.inputs.debug == 'true' }}
+        run: |
+          sudo apt install emacs
+      - name: Setup tmate session
+        if: ${{ github.event.inputs.debug == 'true' }}
+        uses: mxschmitt/action-tmate@35b54afac29c97fb54faba5b513f8fbd1882f113
+        timeout-minutes: 60
+      - name: Run Unit Tests
+        env:
+          TEST_PYTHON: ${{ steps.sp.outputs.python-path }}
+        run: |
+          just test-all -p "$TEST_PYTHON" --group "$TEST_DJANGO_VERSION" --resolution "$DEPENDENCY_RESOLUTION"
+      - name: Store coverage files
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: ${{ env.COVERAGE_FILE }}
+          path: ${{ env.COVERAGE_FILE }}
+
+  test-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.15"]
+        django-version:
+          - "dj52" # LTS April 2028
+          - "dj61" # December 2027
+        dependencies:
+          - "lowest-direct"
+          - "highest"
+        exclude:
+          - python-version: "3.11"
+            dependencies: "highest"
+          - python-version: "3.15"
+            dependencies: "lowest-direct"
+          - python-version: "3.15"
+            django-version: "dj52"
+          - python-version: "3.11"
+            django-version: "dj61"
+    env:
+      COVERAGE_FILE: windows-py${{ matrix.python-version }}-${{ matrix.django-version }}-sqlite.coverage
+      TEST_PYTHON_VERSION: ${{ matrix.python-version }}
+      TEST_DJANGO_VERSION: ${{ matrix.django-version }}
+      TEST_DATABASE_VERSION: "sqlite"
+      DEPENDENCY_RESOLUTION: ${{ matrix.dependencies }}
+    steps:
+      - name: Clear Tool cache
+        if: ${{ github.event.inputs.clear_cache == 'true' }}
+        run: sudo rm -rf /opt/hostedtoolcache
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        id: sp
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+      - name: Install uv
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          enable-cache: false
+      - name: Setup Just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3
+        with:
+          just-version: "1.58.0"
+      - name: install-vim-windows
+        if: ${{ github.event.inputs.debug == 'true' }}
+        uses: rhysd/action-setup-vim@febef33995d6649302e9d88dda81e071b68f16a7
+      - name: Setup tmate session
+        if: ${{ github.event.inputs.debug == 'true' }}
+        uses: mxschmitt/action-tmate@35b54afac29c97fb54faba5b513f8fbd1882f113
+        timeout-minutes: 60
+      - name: Run Unit Tests
+        env:
+          TEST_PYTHON: ${{ steps.sp.outputs.python-path }}
+        run: |
+          just test-all -p $env:TEST_PYTHON --group $env:TEST_DJANGO_VERSION --resolution $env:DEPENDENCY_RESOLUTION
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Store coverage files
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: ${{ env.COVERAGE_FILE }}
+          path: ${{ env.COVERAGE_FILE }}
+
+  test-macos:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.15"]
+        django-version:
+          - "dj52" # LTS April 2028
+          - "dj61" # December 2027
+        dependencies:
+          - "lowest-direct"
+          - "highest"
+        exclude:
+          - python-version: "3.11"
+            dependencies: "highest"
+          - python-version: "3.15"
+            dependencies: "lowest-direct"
+          - python-version: "3.15"
+            django-version: "dj52"
+          - python-version: "3.11"
+            django-version: "dj61"
+    env:
+      COVERAGE_FILE: macos-py${{ matrix.python-version }}-${{ matrix.django-version }}-sqlite.coverage
+      TEST_PYTHON_VERSION: ${{ matrix.python-version }}
+      TEST_DJANGO_VERSION: ${{ matrix.django-version }}
+      TEST_DATABASE_VERSION: "sqlite"
+      DEPENDENCY_RESOLUTION: ${{ matrix.dependencies }}
+    steps:
+      - name: Clear Tool cache
+        if: ${{ github.event.inputs.clear_cache == 'true' }}
+        run: sudo rm -rf /opt/hostedtoolcache
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        id: sp
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+      - name: Install uv
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          enable-cache: false
+      - name: Setup Just
+        run: |
+          brew install just
+      - name: install-emacs-macos
+        if: ${{ github.event.inputs.debug == 'true' }}
+        run: |
+          brew install emacs
+      - name: Setup tmate session
+        if: ${{ github.event.inputs.debug == 'true' }}
+        uses: mxschmitt/action-tmate@35b54afac29c97fb54faba5b513f8fbd1882f113
+        timeout-minutes: 60
+      - name: Run Unit Tests
+        env:
+          TEST_PYTHON: ${{ steps.sp.outputs.python-path }}
+        run: |
+          just test-all -p "$TEST_PYTHON" --group "$TEST_DJANGO_VERSION" --resolution "$DEPENDENCY_RESOLUTION"
+      - name: Store coverage files
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: ${{ env.COVERAGE_FILE }}
+          path: ${{ env.COVERAGE_FILE }}
+
+  coverage-combine:
+    needs: [test-linux, test-windows, test-macos]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # for oidc authentication to codecov
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: "3.14"
+      - name: Install uv
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          enable-cache: false
+      - name: Setup Just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3
+        with:
+          just-version: "1.58.0"
+      - name: Get coverage files
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          pattern: "*.coverage"
+          merge-multiple: true
+      - run: ls -la *.coverage
+      - run: just coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f
+        with:
+          use_oidc: true
+          files: ./coverage.xml

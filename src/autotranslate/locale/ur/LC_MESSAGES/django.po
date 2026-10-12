@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} ایک درآمدی راستہ یا BACKEND درآمدی راستہ اور اختیاری OPTIONS لغت "
+"کے ساتھ ایک لغت ہونا چاہیے۔"
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "ترجمہ سروس {service} ({source}) کو درآمد نہیں کیا جا سکا۔"
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "ترجمہ سروس {service} کو درآمد نہیں کیا جا سکا۔"
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr "ترجمہ سروس {service} ({source}) {base} کی ذیلی کلاس نہیں ہے۔"
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "ترجمہ سروس {service} {base} کی ذیلی کلاس نہیں ہے۔"
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "ترجمہ سروس {service} کے لیے غلط اختیارات : {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"مشین {makemessages} کے ذریعے تخلیق کردہ پیغام (.po) فائلوں کا ترجمہ کرتی ہے۔ "
+"صرف نئے اور تبدیل شدہ پیغامات کا ترجمہ کیا جاتا ہے۔ {path} اور {app} "
+"{locale_paths} ساتھ دی گئی لوکل ڈائرکٹریز کا ترجمہ کرتا ہے، یا اگر ان میں سے "
+"کوئی بھی نہیں دیا گیا ہے۔"
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "ترجمہ کرنے کے لیے مقامی ڈائرکٹری (ایک سے زیادہ مرتبہ دی جا سکتی ہے)۔"
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr ""
+"ایک ایپ جس کے پیغامات کا ترجمہ کرنا ہے (ایک سے زیادہ مرتبہ دیا جا سکتا ہے)۔"
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"صرف اس زبان کا ترجمہ کریں، مثلاً pt_BR یا pt-br (ایک سے زیادہ مرتبہ دیا جا "
+"سکتا ہے)۔ پہلے سے طے شدہ ہر جگہ کا ترجمہ کیا جاتا ہے۔"
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"تمام پیغامات کا دوبارہ ترجمہ کریں، بشمول ترجمہ شدہ پیغامات اور نظرثانی کے "
+"منتظر پیغامات۔"
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"مشینی تراجم کو مبہم کے بطور نشان زد کریں تاکہ استعمال سے پہلے ان کا جائزہ "
+"لیا جا سکے (فجی اندراجات بطور ڈیفالٹ مرتب نہیں ہوتے ہیں)۔"
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "جس زبان میں پیغامات لکھے جاتے ہیں۔"
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "ترجمہ سروس {setting} کے بجائے استعمال کرنا ہے۔"
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"ایک پروگریس بار دکھائیں (tqdm پیکیج کی ضرورت ہے)۔ پہلے سے طے شدہ طور پر یہ "
+"دکھایا جاتا ہے اگر tqdm انسٹال ہے اور آؤٹ پٹ ایک ٹرمینل ہے۔"
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "ترجمہ غیر فعال ہے۔ اپنی ترتیبات میں {setting} سیٹ کریں۔"
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} کو {package} پیکیج کی ضرورت ہے۔"
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"ترجمہ کرنے کے لیے کوئی مقامی ڈائریکٹریز نہیں ہیں۔ {path} یا {app} استعمال "
+"کریں، یا {setting} سیٹ کریں۔"
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "کل"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "پیغامات"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "لوکل ڈائرکٹری {directory} موجود نہیں ہے۔"
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "چھوڑنا {locale}: {option} کے ساتھ منتخب نہیں کیا گیا۔"
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "{file} کو چھوڑنا : {service} {language} کو سپورٹ نہیں کرتا۔"
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "{file} کا {target_language} میں ترجمہ کرنا"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} نے ترجمے کی غلط تعداد لوٹائی: متوقع {sent}، موصول {received}۔"
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"{source} کا ترجمہ مسترد کر دیا کیونکہ اس کے پلیس ہولڈرز یا مارک اپ تبدیل ہو "
+"گئے ہیں: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "{base} کے ذیلی طبقات کو {function}() کو لاگو کرنا ضروری ہے۔"
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} کو {option} اختیار درکار ہے۔ اسے {setting} میں OPTIONS میں شامل "
+"کریں۔"
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service} کو {package} پیکیج کی ضرورت ہے۔ اسے اس کے ساتھ انسٹال کریں: "
+"{command}"

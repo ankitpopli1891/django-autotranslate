@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-04 07:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config.py:36
+#, python-brace-format
+msgid ""
+"{setting} must be an import path or a dictionary with a BACKEND import path "
+"and an optional OPTIONS dictionary."
+msgstr ""
+"{setting} என்பது ஒரு இறக்குமதிப் பாதையாகவோ அல்லது BACKEND இறக்குமதிப் பாதை மற்றும் "
+"விருப்பத்தேர்வான OPTIONS அகராதியைக் கொண்ட ஒரு அகராதியாகவோ இருக்க வேண்டும்."
+
+#: config.py:77
+#, python-brace-format
+msgid "Could not import the translation service {service} ({source})."
+msgstr "மொழிபெயர்ப்புச் சேவையை {service} ({source}) இறக்குமதி செய்ய முடியவில்லை."
+
+#: config.py:79
+#, python-brace-format
+msgid "Could not import the translation service {service}."
+msgstr "மொழிபெயர்ப்புச் சேவையை {service} இறக்குமதி செய்ய முடியவில்லை."
+
+#: config.py:87
+#, python-brace-format
+msgid ""
+"The translation service {service} ({source}) is not a subclass of {base}."
+msgstr ""
+"மொழிபெயர்ப்புச் சேவை {service} ({source}) என்பது {base} இன் துணை வகுப்பு அல்ல."
+
+#: config.py:91
+#, python-brace-format
+msgid "The translation service {service} is not a subclass of {base}."
+msgstr "மொழிபெயர்ப்புச் சேவை {service} என்பது {base} இன் துணை வகுப்பு அல்ல."
+
+#: config.py:104
+#, python-brace-format
+msgid "Invalid options for the translation service {service}: {error}"
+msgstr "மொழிபெயர்ப்பு சேவைக்கான {service} தவறான தேர்வுகள் : {error}"
+
+#: management/commands/autotranslate.py:68
+#, python-brace-format
+msgid ""
+"Machine translate the message (.po) files created by {makemessages}. Only "
+"new and changed messages are translated. Translates the locale directories "
+"given with {path} and {app}, or those in {locale_paths} if neither is given."
+msgstr ""
+"{makemessages} மூலம் உருவாக்கப்பட்ட செய்தி (.po) கோப்புகளை இயந்திரம் மூலம் "
+"மொழிபெயர்க்கவும். புதிய மற்றும் மாற்றப்பட்ட செய்திகள் மட்டுமே மொழிபெயர்க்கப்படும். {path} "
+"மற்றும் {app} மூலம் கொடுக்கப்பட்ட வட்டாரக் கோப்பகங்களையோ, அல்லது இரண்டும் கொடுக்கப்படவில்லை "
+"எனில் {locale_paths} இல் உள்ளவற்றையோ இது மொழிபெயர்க்கும்."
+
+#: management/commands/autotranslate.py:111
+msgid "A locale directory to translate (can be given more than once)."
+msgstr "மொழிபெயர்ப்பதற்கான வட்டார அடைவு (ஒன்றுக்கு மேற்பட்ட முறை கொடுக்கப்படலாம்)."
+
+#: management/commands/autotranslate.py:124
+msgid "An app whose messages to translate (can be given more than once)."
+msgstr "செய்திகளை மொழிபெயர்க்க வேண்டிய ஒரு செயலி (ஒருமுறைக்கு மேல் கொடுக்கலாம்)."
+
+#: management/commands/autotranslate.py:139
+msgid ""
+"Only translate this locale, e.g. pt_BR or pt-br (can be given more than "
+"once). By default every locale found is translated."
+msgstr ""
+"இந்த வட்டார மொழியை மட்டும் மொழிபெயர்க்கவும், எ.கா. pt_BR அல்லது pt-br (ஒன்றுக்கு "
+"மேற்பட்ட முறை கொடுக்கப்படலாம்). இயல்பாக, கண்டறியப்பட்ட ஒவ்வொரு வட்டார மொழியும் "
+"மொழிபெயர்க்கப்படுகிறது."
+
+#: management/commands/autotranslate.py:154
+msgid ""
+"Translate all messages again, including translated messages and messages "
+"awaiting review."
+msgstr ""
+"மொழிபெயர்க்கப்பட்ட செய்திகள் மற்றும் மதிப்பாய்விற்காகக் காத்திருக்கும் செய்திகள் உட்பட, அனைத்து "
+"செய்திகளையும் மீண்டும் மொழிபெயர்க்கவும்."
+
+#: management/commands/autotranslate.py:168
+msgid ""
+"Mark machine translations as fuzzy so they can be reviewed before use (fuzzy "
+"entries are not compiled by default)."
+msgstr ""
+"இயந்திர மொழிபெயர்ப்புகளைப் பயன்படுத்துவதற்கு முன்பு மதிப்பாய்வு செய்ய ஏதுவாக, அவற்றை "
+"தெளிவற்றவை (fuzzy) எனக் குறிக்கவும் (தெளிவற்ற உள்ளீடுகள் இயல்பாகத் தொகுக்கப்படுவதில்லை)."
+
+#: management/commands/autotranslate.py:179
+msgid "The language the messages are written in."
+msgstr "செய்திகள் எழுதப்பட்டிருக்கும் மொழி."
+
+#: management/commands/autotranslate.py:190
+#, python-brace-format
+msgid "The translation service to use instead of {setting}."
+msgstr "{setting} என்பதற்குப் பதிலாகப் பயன்படுத்த வேண்டிய மொழிபெயர்ப்புச் சேவை."
+
+#: management/commands/autotranslate.py:204
+msgid ""
+"Show a progress bar (requires the tqdm package). By default it is shown if "
+"tqdm is installed and the output is a terminal."
+msgstr ""
+"ஒரு முன்னேற்றப் பட்டையைக் காண்பிக்கவும் (இதற்கு tqdm தொகுப்பு தேவை). இயல்பாக, tqdm "
+"நிறுவப்பட்டிருந்தால் இது காட்டப்படும், மேலும் இதன் வெளியீடு ஒரு முனையமாக இருக்கும்."
+
+#: management/commands/autotranslate.py:214
+#, python-brace-format
+msgid "Translation is disabled. Set {setting} in your settings."
+msgstr "மொழிபெயர்ப்பு முடக்கப்பட்டுள்ளது. உங்கள் அமைப்புகளில் {setting} என்பதை அமைக்கவும்."
+
+#: management/commands/autotranslate.py:223
+#, python-brace-format
+msgid "{option} requires the {package} package."
+msgstr "{option} க்கு {package} தொகுப்பு தேவைப்படுகிறது."
+
+#: management/commands/autotranslate.py:248
+#, python-brace-format
+msgid ""
+"No locale directories to translate. Use {path} or {app}, or set {setting}."
+msgstr ""
+"மொழிபெயர்ப்பதற்கு வட்டாரக் கோப்பகங்கள் எதுவும் இல்லை. {path} அல்லது {app}-ஐப் "
+"பயன்படுத்தவும், அல்லது {setting} அமைக்கவும்."
+
+#: management/commands/autotranslate.py:290
+msgctxt "progress bar"
+msgid "Total"
+msgstr "மொத்தம்"
+
+#: management/commands/autotranslate.py:291
+#: management/commands/autotranslate.py:318
+msgctxt "progress bar"
+msgid "messages"
+msgstr "செய்திகள்"
+
+#: management/commands/autotranslate.py:350
+#, python-brace-format
+msgid "The locale directory {directory} does not exist."
+msgstr "வட்டார அடைவு {directory} இல்லை."
+
+#: management/commands/autotranslate.py:375
+#, python-brace-format
+msgid "Skipping {locale}: not selected with {option}."
+msgstr "{locale} தவிர்க்கப்படுகிறது: {option} மூலம் தேர்ந்தெடுக்கப்படவில்லை."
+
+#: management/commands/autotranslate.py:387
+#, python-brace-format
+msgid "Skipping {file}: {service} does not support {language}."
+msgstr "{file} தவிர்க்கப்படுகிறது: {service} ஆனது {language} ஆதரிக்கவில்லை."
+
+#: management/commands/autotranslate.py:411
+#, python-brace-format
+msgid "Translating {file} into {target_language}"
+msgstr "{file} ஐ {target_language} இல் மொழிபெயர்க்கிறது"
+
+#: management/commands/autotranslate.py:514
+#, python-brace-format
+msgid ""
+"{service} returned the wrong number of translations: expected {sent}, "
+"received {received}."
+msgstr ""
+"{service} தவறான எண்ணிக்கையிலான மொழிபெயர்ப்புகளைத் திருப்பியனுப்பியது: "
+"எதிர்பார்க்கப்பட்டது {sent}, பெறப்பட்டது {received}."
+
+#: management/commands/autotranslate.py:591
+#, python-brace-format
+msgid ""
+"Discarded the translation of {source} because its placeholders or markup "
+"changed: {translation}"
+msgstr ""
+"அதன் இடம்பிடிப்பான்கள் அல்லது குறியீடு மாறியதால் {source} இன் மொழிபெயர்ப்பு "
+"நிராகரிக்கப்பட்டது: {translation}"
+
+#: services.py:145 services.py:163
+#, python-brace-format
+msgid "Subclasses of {base} must implement {function}()."
+msgstr "{base} இன் துணை வகுப்புகள் {function}()-ஐ செயல்படுத்த வேண்டும்."
+
+#: services.py:394
+#, python-brace-format
+msgid "{service} requires the {option} option. Add it to OPTIONS in {setting}."
+msgstr ""
+"{service} {option} என்ற ஆப்ஷன் தேவைப்படுகிறது. அதை {setting} இல் உள்ள OPTIONS இல் "
+"சேர்க்கவும்."
+
+#: services.py:407 services.py:502
+#, python-brace-format
+msgid "{service} requires the {package} package. Install it with: {command}"
+msgstr ""
+"{service} க்கு {package} தொகுப்பு தேவைப்படுகிறது. இதை {command} கொண்டு நிறுவவும்."
