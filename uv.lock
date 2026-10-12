@@ -3,15 +3,15 @@ revision = 3
 requires-python = ">=3.11, <4.0"
 resolution-markers = [
     "python_full_version >= '3.15' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
-    "python_full_version == '3.14.*' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
-    "python_full_version < '3.12' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
     "python_full_version >= '3.15' and extra == 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
-    "python_full_version == '3.14.*' and extra == 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
-    "python_full_version < '3.14' and extra == 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
     "python_full_version >= '3.15' and extra != 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
+    "python_full_version == '3.14.*' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
+    "python_full_version == '3.14.*' and extra == 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
     "python_full_version == '3.14.*' and extra != 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
+    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
     "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
+    "python_full_version < '3.12' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
+    "python_full_version < '3.14' and extra == 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
     "python_full_version < '3.12' and extra != 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
 ]
 conflicts = [[
@@ -198,30 +198,30 @@ wheels = [
 
 [[package]]
 name = "boto3"
-version = "1.43.107"
+version = "1.43.111"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "botocore" },
     { name = "jmespath" },
     { name = "s3transfer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2a/c4/c68d22d91482898f1294dab7541ad83f8bcf9df83107e6d8436d6e9dbf01/boto3-1.43.107.tar.gz", hash = "sha256:c4e0f1a0295cbb7103f2950128cf88463c076d220080a7d0f127cf834969fc3a", size = 112718, upload-time = "2026-10-01T19:31:22.283Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/59/d3/fa092ae1c109100d0c5c14c69a316cd6d53c05fb57183fa77b1fcdef86ce/boto3-1.43.111.tar.gz", hash = "sha256:5ae342a16c848909cd42d4be404f69d9082e5705460198d4d3327eca5f6cddcb", size = 112656, upload-time = "2026-10-09T19:27:48.995Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/01/5c/a865e8902370151daf915e3a072ee57e693144838427e42c9bbd986ecb88/boto3-1.43.107-py3-none-any.whl", hash = "sha256:632a4f8298725b94144c8cd383cbdacb34624daa73221e954c3d33ac6e2528d6", size = 140043, upload-time = "2026-10-01T19:31:20.518Z" },
+    { url = "https://files.pythonhosted.org/packages/f1/3b/bca42f8f7b76e567c66cc39bacc6bf31b353c9edfbb0fb1f5c534fc65369/boto3-1.43.111-py3-none-any.whl", hash = "sha256:c79994619c8d89e45f6fd0edc5c5b5a70c9358f00423f4c99cb64931f89ecf37", size = 140042, upload-time = "2026-10-09T19:27:47.599Z" },
 ]
 
 [[package]]
 name = "botocore"
-version = "1.43.107"
+version = "1.43.112"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jmespath" },
     { name = "python-dateutil" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4d/22/3aed44a1e0b9820485124a9ad25e9bccd5539c547ef12827547c3cbeb25f/botocore-1.43.107.tar.gz", hash = "sha256:4a37fa072a00280c746313532d19b00e2dc53f1993222601df104d71d548d5b6", size = 16306128, upload-time = "2026-10-01T19:31:17.202Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0e/49/58187bfb510831e4cdafd7ced8e2a748097da81e8b9799d93f8d6ebf9f61/botocore-1.43.112.tar.gz", hash = "sha256:9ce0d70e09fabbb3a2e1126d3ec79ed67d14c88bb3f064e62ab2881d5eaf3c7b", size = 16351533, upload-time = "2026-10-12T19:26:55.249Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7e/39/3a0db1ba57531062cda616dae68b69faef8114939414a2a291b3aac7617b/botocore-1.43.107-py3-none-any.whl", hash = "sha256:23cbe854e815dbaccf097f7fd32b461c9e1d2ed7e0c7dcc5658218704509d840", size = 16002666, upload-time = "2026-10-01T19:31:14.463Z" },
+    { url = "https://files.pythonhosted.org/packages/4a/a7/dd4c7cf9cde38db5cd5a295434e25415d814536704fe084ec7ee73e5658b/botocore-1.43.112-py3-none-any.whl", hash = "sha256:1e67a3dcf4a308c695d880b65463a492a971d5b28761b49add92f71e4322130f", size = 16052210, upload-time = "2026-10-12T19:26:50.658Z" },
 ]
 
 [[package]]
@@ -748,9 +748,9 @@ name = "django"
 version = "5.2.17"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version < '3.12' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
     "python_full_version >= '3.15' and extra == 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
     "python_full_version == '3.14.*' and extra == 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
+    "python_full_version < '3.12' and extra != 'group-20-django-autotranslate-dj52' and extra == 'group-20-django-autotranslate-dj61'",
     "python_full_version < '3.14' and extra == 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
     "python_full_version < '3.12' and extra != 'group-20-django-autotranslate-dj52' and extra != 'group-20-django-autotranslate-dj61'",
 ]
@@ -871,7 +871,7 @@ typing = [
 
 [package.metadata]
 requires-dist = [
-    { name = "boto3", marker = "extra == 'amazon'", specifier = ">=1.37.1" },
+    { name = "boto3", marker = "extra == 'amazon'", specifier = ">=1.43.111" },
     { name = "django", specifier = ">=5.2,<6.2" },
     { name = "django-typer", specifier = ">=4,<5" },
     { name = "google-api-python-client", marker = "extra == 'google'", specifier = ">=2.162.0" },
