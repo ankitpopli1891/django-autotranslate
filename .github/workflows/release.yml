@@ -93,7 +93,7 @@ jobs:
       id-token: write # IMPORTANT: mandatory for trusted publishing
     steps:
       - name: Download all the dists
-        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: python-package-distributions
           path: dist/
@@ -109,6 +109,7 @@ jobs:
       - lint
       - test
       - build
+      - publish-to-testpypi
     runs-on: ubuntu-latest
     environment:
       name: pypi
