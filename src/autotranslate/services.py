@@ -3,6 +3,7 @@ import contextlib
 import time
 import typing as t
 from functools import cached_property
+from importlib.util import find_spec
 
 from django.core.exceptions import ImproperlyConfigured
 from django.utils.translation import gettext as _
@@ -192,6 +193,8 @@ class GoogleTranslatorService(TranslatorService):
     """
     Uses the free web-based API for translating.
     https://github.com/ssut/py-googletrans
+
+    Requires the ``free`` extra: ``pip install "django-autotranslate[free]"``
     """
 
     # googletrans clients hold an httpx.AsyncClient that is bound to the event loop
@@ -236,6 +239,17 @@ class GoogleTranslatorService(TranslatorService):
             added to, or override, :attr:`default_language_map`.
         """
         super().__init__(language_map=language_map)
+        if find_spec("googletrans") is None:
+            raise ImportError(
+                _(
+                    "{service} requires the {package} package. Install it with: "
+                    "{command}"
+                ).format(
+                    service=self.__class__.__name__,
+                    package="googletrans",
+                    command='pip install "django-autotranslate[free]"',
+                )
+            )
         if retries is not None:
             self.retries = retries
         if retry_delay is not None:

@@ -9,6 +9,17 @@ Work with the free Google Translate service
 The default service uses Google Translate's free web endpoint. It needs no account, but
 it is unofficial and Google limits how much it may be used.
 
+Install the service
+===================
+
+The service is not installed by default. Install the ``free`` extra:
+
+.. code-block:: console
+
+    $ pip install "django-autotranslate[free]"
+
+It is the default :setting:`AUTOTRANSLATE_SERVICE`, so there is nothing to configure.
+
 Avoid rate limiting
 ===================
 
