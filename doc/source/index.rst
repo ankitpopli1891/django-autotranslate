@@ -66,9 +66,10 @@ from being translated, and writes the translations back into your message files.
     $ django-admin autotranslate
     $ django-admin compilemessages
 
-It works with the free Google Translate service out of the box, and with the paid
+It works with the free Google Translate service, and with the paid
 `Google Cloud Translation <https://cloud.google.com/translate>`_ and
-`Amazon Translate <https://aws.amazon.com/translate/>`_ services.
+`Amazon Translate <https://aws.amazon.com/translate/>`_ services. Each service is an
+optional extra, so you only install what you use, see :ref:`explanation-services`.
 
 .. note::
 

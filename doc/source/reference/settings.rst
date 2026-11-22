@@ -11,7 +11,8 @@ Settings
 ``AUTOTRANSLATE_SERVICE``
 =========================
 
-Default: ``"autotranslate.services.GoogleTranslatorService"``
+Default: ``"autotranslate.services.GoogleTranslatorService"``, which requires the
+``free`` extra
 
 The translation service ``autotranslate`` uses. Either the import path of a service
 class:
@@ -44,7 +45,7 @@ Every service accepts:
     exceptions. See :ref:`explanation-languages`.
 
 :class:`~autotranslate.services.GoogleTranslatorService` (free Google Translate, the
-default):
+default, requires the ``free`` extra):
 
 ``retries``
     How many times to retry a request that fails because of a network error or because

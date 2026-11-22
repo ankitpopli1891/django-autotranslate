@@ -4,7 +4,21 @@
 Change Log
 ==========
 
-v2.0.0 (unreleased)
+v2.1.0 (2026-11-22)
+===================
+
+* Require minimum django-typer 4.3.0 and by extension typer 0.29. This adds pydantic as a transitive
+  dependency.
+* **Breaking:** Do not install :pypi:`googletrans` (the free translator) by default. Instead,
+  add it as an optional named dependency. The free service is still the default
+  :setting:`AUTOTRANSLATE_SERVICE`, and says how to install it if it is missing. To keep
+  using it install django-autotranslate as:
+
+  .. code-block:: shell
+
+    pip install "django-autotranslate[free]"
+
+v2.0.0 (2026-10-12)
 ===================
 
 * Rewrote the documentation as a tutorial, how-to guides, reference and explanation

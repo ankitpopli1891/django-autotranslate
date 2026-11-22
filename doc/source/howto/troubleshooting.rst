@@ -38,8 +38,11 @@ Messages
     that ``translate_strings`` returns one translation per string.
 
 ``... requires the ... package. Install it with: ...``
-    Install the extra for your service, for example
-    ``pip install "django-autotranslate[google]"``.
+    No translation service is installed by default. Install the extra for your service:
+    ``free`` for the default free Google Translate service, ``google`` for Google Cloud
+    Translation or ``amazon`` for Amazon Translate, for example
+    ``pip install "django-autotranslate[free]"``. If you upgraded from a version before
+    2.1 and use the default service, you need to add the ``free`` extra.
 
 ``Could not import the translation service ...``
     Check the import path in :setting:`AUTOTRANSLATE_SERVICE` or ``--service``.

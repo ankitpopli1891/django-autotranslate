@@ -51,6 +51,16 @@ class FakeGoogletransTranslator:
         return result(text)
 
 
+class GoogleTranslatorServiceMissingPackageTestCase(TestCase):
+    def test_missing_googletrans(self):
+        # a None entry in sys.modules makes the import raise ImportError
+        with mock.patch.dict("sys.modules", {"googletrans": None}):
+            with self.assertRaises(ImportError) as raised:
+                GoogleTranslatorService()
+        self.assertIn("googletrans", str(raised.exception))
+        self.assertIn('pip install "django-autotranslate[free]"', str(raised.exception))
+
+
 class GoogleTranslatorServiceTestCase(TestCase):
     def setUp(self):
         FakeGoogletransTranslator.instances = []

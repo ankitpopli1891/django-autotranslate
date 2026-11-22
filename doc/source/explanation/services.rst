@@ -10,6 +10,10 @@ django-autotranslate supports three translation services. All of them protect yo
 placeholders and markup, and translations that come back damaged are discarded rather
 than used, so the differences are in coverage, reliability, cost and set up.
 
+No service is installed by default. Each one is an optional extra, so you only install
+the packages of the service you use, for example
+``pip install "django-autotranslate[free]"``.
+
 .. list-table::
     :header-rows: 1
     :widths: 22 26 26 26
@@ -22,6 +26,10 @@ than used, so the differences are in coverage, reliability, cost and set up.
       - 87 of 97
       - 87 of 97
       - 69 of 97
+    * - Extra to install
+      - ``free``
+      - ``google``
+      - ``amazon``
     * - Set up
       - None
       - Google Cloud project and API key
@@ -43,8 +51,9 @@ Which to use
 ============
 
 **To try django-autotranslate, or for an occasional run**, the free service needs no
-set up. Expect the occasional translation to be discarded because a placeholder was
-changed, and translate a few languages at a time to avoid being rate limited, see
+account or credentials, only its extra. Expect the occasional translation to be
+discarded because a placeholder was changed, and translate a few languages at a time to
+avoid being rate limited, see
 :ref:`howto-free-google`.
 
 **For regular use, Google Cloud Translation** is the best default. It covers the same

@@ -87,7 +87,16 @@ def activate_language(app, config):
         )
 
 
+def pypi_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    from docutils import nodes
+
+    url = f"https://pypi.org/project/{text}/"
+    node = nodes.reference(rawtext, text, refuri=url, **options)
+    return [node], []
+
+
 def setup(app):
+    from docutils.parsers.rst import roles
     app.connect("config-inited", activate_language)
 
     # resolve :django-admin:`makemessages` etc. to Django's documentation
@@ -102,6 +111,8 @@ def setup(app):
     app.connect(
         "autodoc-process-docstring", between("^.*[*]{79}.*$", exclude=True)
     )
+
+    roles.register_local_role("pypi", pypi_role)
 
     # https://sphinxcontrib-typer.readthedocs.io/en/latest/howto.html#build-to-multiple-formats
     if Path(app.doctreedir).exists():

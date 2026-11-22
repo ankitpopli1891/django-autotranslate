@@ -25,14 +25,15 @@ If the command is not found, install gettext (``brew install gettext`` on macOS,
 Create a project
 ================
 
-Create and activate a virtual environment, then install django-autotranslate, which
-also installs Django:
+Create and activate a virtual environment, then install django-autotranslate with the
+``free`` extra, which also installs Django and the free Google Translate service this
+tutorial uses:
 
 .. code-block:: console
 
     $ python -m venv .venv
     $ source .venv/bin/activate
-    $ pip install django-autotranslate
+    $ pip install "django-autotranslate[free]"
 
 Create a project and an app:
 
